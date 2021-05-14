@@ -15,17 +15,21 @@
                 <a href="index.html">
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
-                        <img src="backoffice/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                        <img src="{{ asset('backoffice/assets/images/logo-icon.png') }}" alt="homepage"
+                            class="dark-logo" />
                         <!-- Light Logo icon -->
-                        <img src="backoffice/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                        <img src="{{ asset('backoffice/assets/images/logo-icon.png') }}" alt="homepage"
+                            class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                         <!-- dark Logo text -->
-                        <img src="backoffice/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                        <img src="{{ asset('backoffice/assets/images/logo-text.png') }}" alt="homepage"
+                            class="dark-logo" />
                         <!-- Light Logo text -->
-                        <img src="backoffice/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        <img src="{{ asset('backoffice/assets/images/logo-light-text.png') }}" class="light-logo"
+                            alt="homepage" />
                     </span>
                 </a>
             </div>
@@ -145,9 +149,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img src="backoffice/assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
-                            width="40">
-                        <span class="ml-2 d-none d-lg-inline-block"><span>Hei,</span> <span
+                        @if (Auth::user()->avatar)
+                            <img src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}" alt="user"
+                                class="rounded-circle" width="40">
+                        @else
+                            <img src="{{ asset('uploads/avatars/default/placeholder.jpg') }}" alt="user"
+                                class="rounded-circle" width="40">
+                        @endif
+                        <span class="ml-2 d-none d-lg-inline-block"><span>Halo,</span> <span
                                 class="text-dark">{{ Auth::user()->name }}</span> <i data-feather="chevron-down"
                                 class="svg-icon"></i></span>
                     </a>

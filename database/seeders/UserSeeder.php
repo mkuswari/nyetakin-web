@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
                 'email' => 'admin@mail.local',
                 'email_verified_at' => now(),
                 'password' => bcrypt('admin'),
+                'phone' => '6281939448487',
                 'role' => 'admin',
             ],
             [
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
                 'email' => 'designer@mail.local',
                 'email_verified_at' => now(),
                 'password' => bcrypt('designer'),
+                'phone' => '6281939448487',
                 'role' => 'designer',
             ],
             [
@@ -34,6 +36,7 @@ class UserSeeder extends Seeder
                 'email' => 'customer@mail.local',
                 'email_verified_at' => now(),
                 'password' => bcrypt('customer'),
+                'phone' => '6281939448487',
                 'role' => 'customer',
             ],
         ];

@@ -38,9 +38,11 @@
                 </div>
             </div>
 
-            {{-- content --}}
-            @yield('content')
-            {{-- end of content --}}
+            <div class="container-fluid">
+                {{-- content --}}
+                @yield('content')
+                {{-- end of content --}}
+            </div>
 
             {{-- include footer --}}
             @include('layouts.components.backoffice.footer')

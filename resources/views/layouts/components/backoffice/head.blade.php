@@ -13,7 +13,8 @@
     <link href="{{ asset('backoffice/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
     <link href="{{ asset('backoffice/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="{{ asset('backoffice/dist/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backoffice/dist/css/style.css') }}" rel="stylesheet">
+    @stack('styles')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

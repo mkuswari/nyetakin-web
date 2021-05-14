@@ -22,3 +22,4 @@
 <script src="{{ asset('backoffice/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
 <script src="{{ asset('backoffice/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
 <script src="{{ asset('backoffice/dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+@stack('scripts')

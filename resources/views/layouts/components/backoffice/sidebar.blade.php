@@ -12,7 +12,13 @@
                             class="hide-menu">Dashboard</span></a></li>
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
-
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('users.index') }}"
+                        aria-expanded="false"><i data-feather="users" class="feather-icon"></i><span
+                            class="hide-menu">Kelola Users</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('categories.index') }}"
+                        aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                            class="hide-menu">Kelola
+                            Kategori</span></a></li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
