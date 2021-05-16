@@ -19,6 +19,10 @@
                         aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                             class="hide-menu">Kelola
                             Kategori</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('products.index') }}"
+                        aria-expanded="false"><i data-feather="shopping-bag" class="feather-icon"></i><span
+                            class="hide-menu">Kelola
+                            Produk</span></a></li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
