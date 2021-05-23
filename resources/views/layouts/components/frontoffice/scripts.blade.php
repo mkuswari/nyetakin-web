@@ -1,58 +1,28 @@
+<!-- jquery plugins here-->
 <script src="{{ asset('frontoffice/js/jquery-1.12.1.min.js') }}"></script>
-
-<script src="{{ asset('frontoffice/js/script.js') }}"></script>
-
+<!-- popper js -->
+<script src="{{ asset('frontoffice/js/popper.min.js') }}"></script>
+<!-- bootstrap js -->
+<script src="{{ asset('frontoffice/js/bootstrap.min.js') }}"></script>
+<!-- easing js -->
 <script src="{{ asset('frontoffice/js/jquery.magnific-popup.js') }}"></script>
-
+<!-- swiper js -->
 <script src="{{ asset('frontoffice/js/swiper.min.js') }}"></script>
-
+<!-- swiper js -->
 <script src="{{ asset('frontoffice/js/masonry.pkgd.js') }}"></script>
-
-<script src="{{ asset('frontoffice/js/owl.carousel.js') }}"></script>
-<script>
-    eval(mod_pagespeed_9Z4qIwpEkb);
-
-</script>
-<script>
-    eval(mod_pagespeed_MPlfZyvWKT);
-
-</script>
-
-<script>
-    eval(mod_pagespeed_S$S579wDQw);
-
-</script>
-<script>
-    eval(mod_pagespeed_Mc5PivJ711);
-
-</script>
-<script>
-    eval(mod_pagespeed_FHbok_8bU7);
-
-</script>
-<script src="{{ asset('frontoffice/js/contact.min.js') }}"></script>
-<script>
-    eval(mod_pagespeed_80ekGytx6J);
-
-</script>
-<script>
-    eval(mod_pagespeed_B9u9tEzFif);
-
-</script>
-<script>
-    eval(mod_pagespeed_ZfSEmZ$dYf);
-
-</script>
-<script>
-    eval(mod_pagespeed_nLwfJZTo5w);
-
-</script>
-<script>
-    eval(mod_pagespeed_OwXKBAn$my);
-
-</script>
-
-<script>
-    eval(mod_pagespeed_ZivL3dKadY);
-
-</script>
+<!-- particles js -->
+<script src="{{ asset('frontoffice/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('frontoffice/js/jquery.nice-select.min.js') }}"></script>
+<!-- slick js -->
+<script src="{{ asset('frontoffice/js/slick.min.js') }}"></script>
+<script src="{{ asset('frontoffice/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('frontoffice/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('frontoffice/js/contact.js') }}"></script>
+<script src="{{ asset('frontoffice/js/jquery.ajaxchimp.min.js') }}"></script>
+<script src="{{ asset('frontoffice/js/jquery.form.js') }}"></script>
+<script src="{{ asset('frontoffice/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('frontoffice/js/mail-script.js') }}"></script>
+<!-- custom js -->
+<script src="{{ asset('frontoffice/js/custom.js') }}"></script>
+{{-- stack scripts --}}
+@stack('scripts')

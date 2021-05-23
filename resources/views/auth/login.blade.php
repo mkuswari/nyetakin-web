@@ -1,84 +1,67 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@section('title')
+    Login
+@endsection
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 mx-auto">
+            <div class="login_part_form">
+                <div class="login_part_form_iner">
 
-                    <div class="card-body">
 
-                        @if (session('error'))
-                            <div class="alert alert-danger" role="alert">
-                                {{ session('error') }}
-                            </div>
-                        @endif
-
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-
-                            <div class="form-group row">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        autocomplete="current-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}>
-
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
-                                    </button>
-
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </form>
+                    <div class="text-center">
+                        <img src="{{ asset('frontoffice/img/logo.png') }}" alt="Logo Nyetakin">
+                        <h3 class="mt-4">Selamat datang ! <br>
+                            Silahkan login </h3>
                     </div>
+
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    <form class="row contact_form" action="{{ route('login') }}" method="post">
+                        @csrf
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
+                                name="email" value="{{ old('email') }}" placeholder="Masukkan E-mail" autofocus>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="password" class="form-control @error('email') is-invalid @enderror" id="password"
+                                name="password" placeholder="Masukkan Password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <div class="creat_account d-flex align-items-center justify-content-between">
+                                <div class="remember">
+                                    <input type="checkbox" id="remember" name="remember"
+                                        {{ old('remember') ? 'checked' : '' }}>
+                                    <label for="remember">Remember me</label>
+                                </div>
+                                <div class="forgo-pass">
+                                    <a href="" class="text-muted">Lupa Password?</a>
+                                </div>
+                            </div>
+                            <button type="submit" value="submit" class="btn_3">
+                                Login
+                            </button>
+                            <div class="text-center">
+                                <span>Belum punya akun? <a href="{{ route('register') }}">Buat Akun</a></span>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
