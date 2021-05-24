@@ -9,6 +9,14 @@ class Portfolio extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'thumbnail',
+        'description',
+        'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\Models\User');

@@ -26,7 +26,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.portfolios.create');
     }
 
     /**
@@ -37,19 +37,30 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "title" => "required",
+            "thumbnail" => "required|image",
+        ]);
+
+        // buat slug portfolio
+        $slug = \Str::slug($request->title);
+
+        // upload thumbnail portfolio
+        $thumbName = $slug . '.' . $request->thumbnail->extension();
+        $request->thumbnail->move(public_path('uploads/portfolios/'), $thumbName);
+
+        Portfolio::create([
+            "title" => $request->title,
+            "slug" => $slug,
+            "thumbnail" => $thumbName,
+            "description" => $request->description
+        ]);
+
+        session()->flash('success', 'Portfolio berhasil ditambahkan');
+
+        return redirect()->route('portfolios.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -59,7 +70,9 @@ class PortfolioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $portfolio = Portfolio::find($id);
+
+        return view('backoffice.portfolios.edit', compact('portfolio'));
     }
 
     /**
@@ -71,7 +84,33 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $portfolio = Portfolio::find($id);
+
+        $this->validate($request, [
+            "title" => "required",
+        ]);
+
+        $slug = \Str::slug($request->title);
+
+        $thumbName = $portfolio->thumbnail;
+        if ($request->thumbnail) {
+            if ($portfolio->thumbnail && file_exists(public_path('uploads/portfolios/' . $portfolio->thumbnail))) {
+                unlink(public_path('uploads/portfolios/' . $portfolio->thumbnail));
+            }
+            $thumbName = $slug . '.' . $request->thumbnail->extension();
+            $request->thumbnail->move(public_path('uploads/portfolios'), $thumbName);
+        }
+
+        $portfolio->update([
+            "title" => $request->title,
+            "slug" => $slug,
+            "thumbnail" => $thumbName,
+            "description" => $request->description,
+        ]);
+
+        session()->flash('success', 'Portfolio berhasil diupdate');
+
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -82,6 +121,15 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $portfolio = Portfolio::find($id);
+        if ($portfolio->thumbnail && file_exists(public_path('uploads/portfolios/' . $portfolio->thumbnail))) {
+            unlink(public_path('uploads/portfolios/' . $portfolio->thumbnail));
+        }
+
+        $portfolio->delete();
+
+        session()->flash('success', ' Portfolio berhasil dihapus dari sistem');
+
+        return redirect()->route("portfolios.index");
     }
 }

@@ -32,7 +32,7 @@
     @else
         <div class="hearer_icon d-flex">
             <a href="{{ route('home') }}"><i class="fas fa-user"></i></a>
-            {{-- <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a> --}}
+            <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
             <a href=""><i class="ti-heart"></i></a>
             <a href=""><i class="fas fa-cart-plus"></i></a><sup class="badge badge-danger">(0)</sup>
         </div>

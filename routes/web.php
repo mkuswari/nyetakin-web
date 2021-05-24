@@ -37,7 +37,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::resources([
         '/users' => UserController::class,
         '/categories' => CategoryController::class,
+        '/portfolios' => PortfolioController::class,
     ], ['except' => ['show']]);
     Route::resource('/products', ProductController::class);
-    Route::resource('/portfolios', PortfolioController::class);
 });
