@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="index.html"> <img src="{{ asset('frontoffice/img/logo.png') }}" alt="logo"> </a>
+    <a class="navbar-brand" href="{{ url('/') }}"> <img src="{{ asset('frontoffice/img/logo.png') }}" alt="logo">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="menu_icon"><i class="fas fa-bars"></i></span>
@@ -11,19 +12,19 @@
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kategori</a>
+                <a class="nav-link" href="{{ url('/category') }}">Kategori</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Produk</a>
+                <a class="nav-link" href="{{ url('/product') }}">Produk</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link" href="{{ url('/portfolio') }}">Portfolio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Desainer</a>
+                <a class="nav-link" href="{{ url('/designer') }}">Desainer</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html">Tentang</a>
+                <a class="nav-link" href="{{ url('/about') }}">Tentang</a>
             </li>
         </ul>
     </div>
