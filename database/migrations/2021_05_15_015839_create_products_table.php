@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('thumbnail');
+            $table->text('short_description')->nullable();
             $table->text('description')->nullable();
             $table->float('production_price');
             $table->float('selling_price');

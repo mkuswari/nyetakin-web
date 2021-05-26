@@ -1,7 +1,7 @@
 @extends('layouts.frontoffice')
 
 @section('title')
-    Nyetakin - Tentang Kami
+    {{ $category->name }}
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="tracking_box_inner">
-                        <h1 class="font-weight-bold">Tentang Kami</h1>
+                        <h1 class="font-weight-bold">{{ $category->name }}</h1>
                     </div>
                 </div>
             </div>

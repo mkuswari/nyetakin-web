@@ -25,11 +25,17 @@ Auth::routes();
 
 // Global routes
 Route::get('/', [PageController::class, 'index']);
+// categories
 Route::get('/category', [PageController::class, 'category']);
+Route::get('/category/{slug}', [PageController::class, 'categoryDetail']);
+// products
 Route::get('/product', [PageController::class, 'product']);
+Route::get('/product/{slug}', [PageController::class, 'productDetail']);
+// portfolios
 Route::get('/portfolio', [PageController::class, 'portfolio']);
+// designers
 Route::get('/designer', [PageController::class, 'designer']);
-Route::get('/about', [PageController::class, 'about']);
+Route::get('/contact', [PageController::class, 'contact']);
 
 // Frontoffice routes
 Route::prefix('/home')->group(function () {

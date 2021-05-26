@@ -24,7 +24,7 @@
                 <a class="nav-link" href="{{ url('/designer') }}">Desainer</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/about') }}">Tentang</a>
+                <a class="nav-link" href="{{ url('/contact') }}">Kontak</a>
             </li>
         </ul>
     </div>

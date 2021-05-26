@@ -80,6 +80,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="short_description" class="col-sm-2 col-form-label">Deskripsi
+                                        Singkat</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="short_description" id="short_description" rows="2"
+                                            class="form-control"
+                                            placeholder="Deskripsi produk">{{ old('short_description') ?? $product->short_description }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="description" class="col-sm-2 col-form-label">Deskripsi Produk</label>
                                     <div class="col-sm-10">
                                         <textarea name="description" id="description" rows="5" class="form-control"
