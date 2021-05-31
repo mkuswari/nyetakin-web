@@ -13,12 +13,16 @@
 
                     <div class="text-center">
                         <img src="{{ asset('frontoffice/img/logo.png') }}" alt="Logo Nyetakin">
-                        <h3 class="mt-4">Selamat datang ! <br>
-                            Silahkan login </h3>
+                        <h3 class="mt-4">Login</h3>
                     </div>
 
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     @if (session('error'))
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger">
                             {{ session('error') }}
                         </div>
                     @endif

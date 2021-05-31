@@ -13,8 +13,7 @@
 
                     <div class="text-center">
                         <img src="{{ asset('frontoffice/img/logo.png') }}" alt="Logo Nyetakin">
-                        <h3 class="mt-4">Silahkan Register <br>
-                            untuk membuat akun baru </h3>
+                        <h3 class="mt-4">Register</h3>
                     </div>
 
                     @if (session('error'))

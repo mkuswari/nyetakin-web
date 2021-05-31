@@ -119,7 +119,6 @@ class UserController extends Controller
                 "email" => $request->email,
                 "phone" => $request->phone,
                 "avatar" => $imgName,
-                "address" => $request->address,
                 "role" => $request->role,
             ]);
         } else {
@@ -138,7 +137,6 @@ class UserController extends Controller
                 "email" => $request->email,
                 "phone" => $request->phone,
                 "avatar" => $imgName,
-                "address" => $request->address,
                 "roles" => $request->role,
                 "password" => \Hash::make($request->password)
             ]);

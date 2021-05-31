@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,13 @@ Route::get('/portfolio', [PageController::class, 'portfolio']);
 // designers
 Route::get('/designer', [PageController::class, 'designer']);
 Route::get('/contact', [PageController::class, 'contact']);
+
+// Setting routes
+Route::prefix('/setting')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::patch('/profile', [ProfileController::class, 'changePassword'])->name('profile.password');
+});
 
 // Frontoffice routes
 Route::prefix('/home')->group(function () {
