@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,22 @@ Route::get('/portfolio', [PageController::class, 'portfolio']);
 // designers
 Route::get('/designer', [PageController::class, 'designer']);
 Route::get('/contact', [PageController::class, 'contact']);
+
+// Cart routes
+Route::prefix('/cart')->group(function () {
+    Route::get('/', [CartController::class, 'showCart'])->name('cart');
+    Route::post('/add', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::put('/update', [CartController::class, 'updateCart']);
+    Route::delete('/delete', [CartController::class], 'removeCart');
+});
+
+// Wishlist routes
+Route::prefix('/wishlist')->group(function () {
+    Route::get('/', [WishlistController::class, 'showWishlist'])->name('wishlist');
+    Route::post('/add', [WishlistController::class, 'addToWishlist']);
+    Route::put('/update', [WishlistController::class, 'updateWishlist']);
+    Route::delete('/delete', [WishlistController::class, 'deleteWishlist']);
+});
 
 // Setting routes
 Route::prefix('/setting')->group(function () {

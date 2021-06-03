@@ -33,7 +33,8 @@
                         <div class="card_area d-flex justify-content-between align-items-center">
                             <div class="product_count">
                                 <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                                <input class="input-number" type="text" value="1" min="1" max="{{ $product->stock }}">
+                                <input class="input-number" type="text" value="1" min="1" max="{{ $product->stock }}"
+                                    readonly>
                                 <span class="number-increment"> <i class="ti-plus"></i></span>
                             </div>
                             <a href="#" class="btn_3">add to cart</a>
@@ -61,7 +62,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <p>
-                        {{ $product->description }}
+                        {{ $product->long_description }}
                     </p>
                 </div>
                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">

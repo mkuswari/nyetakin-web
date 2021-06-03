@@ -59,15 +59,21 @@
                                     <label for="short_description" class="col-sm-2 col-form-label">Deskripsi Singkat</label>
                                     <div class="col-sm-10">
                                         <textarea name="short_description" id="short_description" rows="2"
-                                            class="form-control"
+                                            class="form-control @error('short_description') is-invalid @enderror"
                                             placeholder="Deskripsi produk">{{ old('short_description') }}</textarea>
+                                        @error('short_description')
+                                            <span class="invalid-feedback" role="alert">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="description" class="col-sm-2 col-form-label">Deskripsi Produk</label>
+                                    <label for="long_description" class="col-sm-2 col-form-label">Deskripsi Lengkap</label>
                                     <div class="col-sm-10">
-                                        <textarea name="description" id="description" rows="5" class="form-control"
-                                            placeholder="Deskripsi produk">{{ old('description') }}</textarea>
+                                        <textarea name="long_description" id="long_description" rows="5"
+                                            class="form-control"
+                                            placeholder="Deskripsi produk">{{ old('long_description') }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
