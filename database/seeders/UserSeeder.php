@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'name' => 'Site Admin',
-                'email' => 'admin@mail.local',
+                'email' => 'admin@example.test',
                 'email_verified_at' => now(),
                 'password' => bcrypt('admin'),
                 'phone' => '6281939448487',
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Site Designer',
-                'email' => 'designer@mail.local',
+                'email' => 'designer@example.test',
                 'email_verified_at' => now(),
                 'password' => bcrypt('designer'),
                 'phone' => '6281939448487',
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Site Customer',
-                'email' => 'customer@mail.local',
+                'email' => 'customer@example.test',
                 'email_verified_at' => now(),
                 'password' => bcrypt('customer'),
                 'phone' => '6281939448487',

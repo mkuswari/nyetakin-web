@@ -29,7 +29,7 @@
         </ul>
     </div>
     @guest
-        <a href="{{ route('login') }}" class="btn btn-danger px-4 shadow">Login</a>
+        <a href="{{ route('login') }}" class="btn btn-danger px-4" style="border-radius: 20px;">Login</a>
     @else
         <div class="hearer_icon d-flex">
             <a href="{{ route('home') }}"><i class="fas fa-user"></i></a>

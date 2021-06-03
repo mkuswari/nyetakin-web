@@ -29,12 +29,12 @@
                                 @csrf
                                 @method("PUT")
                                 <div class="form-group row">
-                                    <label for="title" class="col-sm-2 form-label">Judul</label>
+                                    <label for="name" class="col-sm-2 form-label">Nama Portfolio</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" id="title" placeholder="Judul"
-                                            class="form-control @error('title') is-invalid @enderror}"
-                                            value="{{ old('title') ?? $portfolio->title }}">
-                                        @error('title')
+                                        <input type="text" name="name" id="name" placeholder="Judul"
+                                            class="form-control @error('name') is-invalid @enderror}"
+                                            value="{{ old('name') ?? $portfolio->name }}">
+                                        @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 {{ $message }}
                                             </span>

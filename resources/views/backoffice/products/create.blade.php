@@ -71,16 +71,16 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="production_price" class="col-sm-2 col-form-label">Harga Produksi</label>
+                                    <label for="initial_price" class="col-sm-2 col-form-label">Harga Awal</label>
                                     <div class="col-sm-10">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">Rp.</span>
                                             </div>
-                                            <input type="number" name="production_price" id="production_price"
+                                            <input type="number" name="initial_price" id="initial_price"
                                                 class="form-control @error('production-price') is-invalid @enderror"
                                                 placeholder="Harga Produksi...">
-                                            @error('production_price')
+                                            @error('initial_price')
                                                 <span class="invalid-feedback" role="alert">
                                                     {{ $message }}
                                                 </span>

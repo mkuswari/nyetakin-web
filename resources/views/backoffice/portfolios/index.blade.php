@@ -57,7 +57,7 @@
                                                 class="portfolio-thumbnail">
                                         </td>
                                         <td>{{ $portfolio->title }}</td>
-                                        <td>{{ $portfolio->description }}</td>
+                                        <td><small>{{ $portfolio->description }}</small></td>
                                         <td>{{ $portfolio->created_at }}</td>
                                         <td>
                                             <a href="{{ route('portfolios.edit', [$portfolio->id]) }}"

@@ -38,19 +38,19 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            "title" => "required",
+            "name" => "required",
             "thumbnail" => "required|image",
         ]);
 
         // buat slug portfolio
-        $slug = \Str::slug($request->title);
+        $slug = \Str::slug($request->name);
 
         // upload thumbnail portfolio
         $thumbName = $slug . '.' . $request->thumbnail->extension();
         $request->thumbnail->move(public_path('uploads/portfolios/'), $thumbName);
 
         Portfolio::create([
-            "title" => $request->title,
+            "name" => $request->name,
             "slug" => $slug,
             "thumbnail" => $thumbName,
             "description" => $request->description
@@ -87,10 +87,10 @@ class PortfolioController extends Controller
         $portfolio = Portfolio::find($id);
 
         $this->validate($request, [
-            "title" => "required",
+            "name" => "required",
         ]);
 
-        $slug = \Str::slug($request->title);
+        $slug = \Str::slug($request->name);
 
         $thumbName = $portfolio->thumbnail;
         if ($request->thumbnail) {
@@ -102,7 +102,7 @@ class PortfolioController extends Controller
         }
 
         $portfolio->update([
-            "title" => $request->title,
+            "name" => $request->name,
             "slug" => $slug,
             "thumbnail" => $thumbName,
             "description" => $request->description,

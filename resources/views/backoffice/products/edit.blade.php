@@ -84,29 +84,35 @@
                                         Singkat</label>
                                     <div class="col-sm-10">
                                         <textarea name="short_description" id="short_description" rows="2"
-                                            class="form-control"
+                                            class="form-control @error('short_description') is-invalid @enderror"
                                             placeholder="Deskripsi produk">{{ old('short_description') ?? $product->short_description }}</textarea>
+                                        @error('short_description')
+                                            <span class="invalid-feedback" role="alert">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="description" class="col-sm-2 col-form-label">Deskripsi Produk</label>
+                                    <label for="long_description" class="col-sm-2 col-form-label">Deskripsi Lengkap</label>
                                     <div class="col-sm-10">
-                                        <textarea name="description" id="description" rows="5" class="form-control"
-                                            placeholder="Deskripsi produk">{{ old('description') ?? $product->description }}</textarea>
+                                        <textarea name="long_description" id="long_description" rows="5"
+                                            class="form-control"
+                                            placeholder="Deskripsi produk">{{ old('long_description') ?? $product->long_description }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="production_price" class="col-sm-2 col-form-label">Harga Produksi</label>
+                                    <label for="initial_price" class="col-sm-2 col-form-label">Harga Awal</label>
                                     <div class="col-sm-10">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">Rp.</span>
                                             </div>
-                                            <input type="number" name="production_price" id="production_price"
+                                            <input type="number" name="initial_price" id="initial_price"
                                                 class="form-control @error('production-price') is-invalid @enderror"
                                                 placeholder="Harga Produksi..."
-                                                value="{{ old('production_price') ?? $product->production_price }}">
-                                            @error('production_price')
+                                                value="{{ old('initial_price') ?? $product->initial_price }}">
+                                            @error('initial_price')
                                                 <span class="invalid-feedback" role="alert">
                                                     {{ $message }}
                                                 </span>

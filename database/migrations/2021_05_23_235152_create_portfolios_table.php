@@ -15,11 +15,11 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->string('name');
             $table->string('slug');
             $table->string('thumbnail');
             $table->text('description')->nullable();
-            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
