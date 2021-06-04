@@ -144,7 +144,7 @@
                                     <div class="col-sm-10">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">Kg.</span>
+                                                <span class="input-group-text" id="basic-addon1">Gram</span>
                                             </div>
                                             <input type="number" name="weight" id="weight"
                                                 class="form-control @error('weight') is-invalid @enderror"

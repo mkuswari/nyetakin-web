@@ -16,6 +16,16 @@
                 </div>
                 <div class="col-lg-5 col-xl-4 align-self-center">
                     <div class="s_product_text">
+                        @if (session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                        @endif
+                        @if (session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('error') }}
+                            </div>
+                        @endif
                         <h3>{{ $product->name }}</h3>
                         <h2>Rp. {{ number_format($product->selling_price) }}</h2>
                         <ul class="list">
@@ -30,16 +40,20 @@
                         <p>
                             {{ $product->short_description }}
                         </p>
-                        <div class="card_area d-flex justify-content-between align-items-center">
-                            <div class="product_count">
-                                <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                                <input class="input-number" type="text" value="1" min="1" max="{{ $product->stock }}"
-                                    readonly>
-                                <span class="number-increment"> <i class="ti-plus"></i></span>
+                        <form action="{{ route('cart.add') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <div class="card_area d-flex justify-content-between align-items-center">
+                                <div class="product_count">
+                                    <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                                    <input class="input-number" type="text" name="quantity" value="1" min="1"
+                                        max="{{ $product->stock }}" readonly>
+                                    <span class="number-increment"> <i class="ti-plus"></i></span>
+                                </div>
+                                <button type="submit" class="btn_3">add to cart</button>
+                                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                             </div>
-                            <a href="#" class="btn_3">add to cart</a>
-                            <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
