@@ -41,6 +41,18 @@
                             Portfolio</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="credit-card"
+                            class="feather-icon"></i><span class="hide-menu">Kelola
+                            Transaksi</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="truck"
+                            class="feather-icon"></i><span class="hide-menu">Kelola
+                            Pengiriman</span>
+                    </a>
+                </li>
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Setting</span></li>
                 <li class="sidebar-item">

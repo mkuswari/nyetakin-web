@@ -3,12 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function showCart()
+    {
+        $carts = Cart::with("product")->where([
+            "user_id" => Auth::user()->id
+        ])->get();
+
+        return view('frontoffice.cart.index', compact('carts'));
+    }
+
     public function addToCart(Request $request)
     {
         $this->validate($request, [
@@ -16,16 +32,10 @@ class CartController extends Controller
             "quantity" => "required",
         ]);
 
-        // Generate sesson is if not exist
-        $sessionId = Session::get("session_id");
-        if (empty($sessionId)) {
-            $sessionId = Session::getId();
-            Session::put("session_id", $sessionId);
-        }
-
         // Check if item already exist in cart
         $checkItem = Cart::where([
             "product_id" => $request->product_id,
+            "user_id" => Auth::user()->id,
         ])->count();
         if ($checkItem > 0) {
             session()->flash('error', 'Item sudah ada dalam keranjang');
@@ -33,7 +43,6 @@ class CartController extends Controller
         }
 
         Cart::create([
-            "session_id" => $sessionId,
             "product_id" => $request->product_id,
             "user_id" => Auth::user()->id,
             "quantity" => $request->quantity,
