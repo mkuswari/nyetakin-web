@@ -101,7 +101,8 @@
                         @foreach ($categories as $category)
                             <a href="{{ url('category/' . $category->slug) }}">
                                 <div class="single_product_item">
-                                    <img src="{{ asset('uploads/categories/' . $category->image) }}" class="rounded-lg category-thumbnail">
+                                    <img src="{{ asset('uploads/categories/' . $category->image) }}"
+                                        class="rounded-lg category-thumbnail">
                                     <div class="single_product_text">
                                         <h4>{{ $category->name }}</h4>
                                     </div>

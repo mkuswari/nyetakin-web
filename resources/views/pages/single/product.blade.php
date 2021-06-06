@@ -51,8 +51,15 @@
                                     <span class="number-increment"> <i class="ti-plus"></i></span>
                                 </div>
                                 <button type="submit" class="btn_3">add to cart</button>
-                                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
+                                <a href="#" class="like_us"
+                                    onclick="event.preventDefault(); document.getElementById('form-addToWishlist').submit();">
+                                    <i class="ti-heart"></i> </a>
                             </div>
+                        </form>
+                        {{-- add to wishlist form --}}
+                        <form action="{{ route('wishlist.add') }}" method="post" id="form-addToWishlist">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
                         </form>
                     </div>
                 </div>

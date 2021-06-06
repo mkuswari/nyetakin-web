@@ -51,9 +51,8 @@ Route::prefix('/cart')->group(function () {
 // Wishlist routes
 Route::prefix('/wishlist')->group(function () {
     Route::get('/', [WishlistController::class, 'showWishlist'])->name('wishlist');
-    Route::post('/add', [WishlistController::class, 'addToWishlist']);
-    Route::put('/update', [WishlistController::class, 'updateWishlist']);
-    Route::delete('/delete', [WishlistController::class, 'deleteWishlist']);
+    Route::post('/add', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
+    Route::delete('/delete/{id}', [WishlistController::class, 'deleteWishlist'])->name('wishlist.delete');
 });
 
 // Setting routes

@@ -32,4 +32,9 @@ class Product extends Model
     {
         return $this->hasMany('App\Model\Cart');
     }
+
+    public function wishlist()
+    {
+        return $this->hasMany('App\Model\Wishlist');
+    }
 }

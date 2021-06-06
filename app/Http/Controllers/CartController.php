@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -46,6 +47,14 @@ class CartController extends Controller
             "user_id" => Auth::user()->id,
             "quantity" => $request->quantity,
         ]);
+
+        // check if item exist on wishlist items, then delete item
+        $onWishlist = Wishlist::where([
+            "product_id" => $request->product_id,
+            "user_id" => Auth::user()->id,
+        ]);
+
+        $onWishlist->delete();
 
         session()->flash("success", "Item berhasil ditambahkan ke keranjang");
         return redirect()->back();
