@@ -35,57 +35,10 @@
         <div class="container">
             <div class="cart_inner">
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nama Produk</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($carts as $cart)
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="d-flex">
-                                                <img src="{{ asset('uploads/products/' . $cart->product->thumbnail) }}"
-                                                    class="cart-item-thumbnail" />
-                                            </div>
-                                            <div class="media-body">
-                                                <p>{{ $cart->product->name }}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h5>Rp. {{ number_format($cart->product->selling_price) }}</h5>
-                                    </td>
-                                    <td>
-                                        <div class="product_count">
-                                            <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                                            <input class="input-number" type="text" value="{{ $cart->quantity }}" min="0"
-                                                max="10">
-                                            <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h5>Rp. {{ number_format($cart->product->selling_price * $cart->quantity) }}</h5>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <h5>Subtotal</h5>
-                                </td>
-                                <td>
-                                    {{-- <h5>Rp. {{ $cart-> }}</h5> --}}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div id="appendCartData">
+                        {{-- load cart items --}}
+                        @include('frontoffice.cart.items')
+                    </div>
                     <div class="checkout_btn_inner float-right">
                         <a class="btn_1" href="{{ url('/product') }}">Continue Shopping</a>
                         <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
@@ -96,3 +49,71 @@
     <!--================End Cart Area =================-->
 
 @endsection
+
+@push('scripts')
+    {{-- ajax code tu update qty item on cart --}}
+    <script>
+        // setup ajax
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        // update item cart
+        $(document).on('click', '.btn-update', function() {
+            if ($(this).hasClass('qty-minus')) {
+                var quantity = $(this).next().val();
+                if (quantity <= 1) {
+                    alert('Jumlah item minimal 1');
+                    return false;
+                } else {
+                    newQuantity = parseInt(quantity) - 1;
+                }
+            }
+            if ($(this).hasClass('qty-plus')) {
+                var quantity = $(this).prev().val();
+                newQuantity = parseInt(quantity) + 1;
+            }
+            // alert(newQuantity);
+            var cart = $(this).data('cart');
+            // alert(cart);
+            // start ajax proccess
+            $.ajax({
+                data: {
+                    "cart": cart,
+                    "qty": newQuantity,
+                },
+                url: '/cart/update',
+                type: 'post',
+                success: function(resp) {
+                    if (resp.status == false) {
+                        alert(resp.message);
+                    }
+                    $("#appendCartData").html(resp.view);
+                },
+                error: function() {
+                    alert("error");
+                }
+            });
+        });
+
+        // $(document).on('click', '.btn-delete', function() {
+        //     var cart = $(this).data('cart');
+        //     $.ajax({
+        //         data: {
+        //             "cart": cart
+        //         },
+        //         url: "/cart/delete",
+        //         type: "post",
+        //         success: function(resp) {
+        //             $('#appendCartData').html(resp.view);
+        //         },
+        //         error: function() {
+        //             alert("error");
+        //         }
+        //     })
+        // });
+
+    </script>
+@endpush

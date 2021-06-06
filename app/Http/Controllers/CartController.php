@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
-use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
@@ -50,5 +49,29 @@ class CartController extends Controller
 
         session()->flash("success", "Item berhasil ditambahkan ke keranjang");
         return redirect()->back();
+    }
+
+    public function updateCartQty(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = $request->all();
+            Cart::where("id", $data["cart"])->update(['quantity' => $data["qty"]]);
+            $carts = Cart::with("product")->where([
+                "user_id" => Auth::user()->id
+            ])->get();
+            return response()->json([
+                'view' => (string)View::make('frontoffice.cart.items', compact("carts"))
+            ]);
+        }
+    }
+
+    public function removeCartItem($id)
+    {
+        $cart = Cart::find($id);
+
+        $cart->delete();
+
+        session()->flash('success', 'Item berhasil dihapus dari keranjang');
+        return redirect()->route("cart");
     }
 }

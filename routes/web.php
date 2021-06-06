@@ -44,8 +44,8 @@ Route::get('/contact', [PageController::class, 'contact']);
 Route::prefix('/cart')->group(function () {
     Route::get('/', [CartController::class, 'showCart'])->name('cart');
     Route::post('/add', [CartController::class, 'addToCart'])->name('cart.add');
-    Route::put('/update', [CartController::class, 'updateCart']);
-    Route::delete('/delete', [CartController::class], 'removeCart');
+    Route::post('/update', [CartController::class, 'updateCartQty']);
+    Route::delete('/delete/{id}', [CartController::class, 'removeCartItem'])->name('cart.delete');
 });
 
 // Wishlist routes

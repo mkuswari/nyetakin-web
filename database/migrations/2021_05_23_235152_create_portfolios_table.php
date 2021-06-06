@@ -22,7 +22,7 @@ class CreatePortfoliosTable extends Migration
             $table->text('description')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
     }
 
