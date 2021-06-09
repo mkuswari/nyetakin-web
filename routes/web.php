@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
@@ -23,6 +24,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route untuk Rajaongkir
+Route::get('/cities/{province_id}', [CheckoutController::class, 'getCities']);
+Route::post('/cek-ongkir', [CheckoutController::class, 'getCost'])->name('cek-ongkir');
+
+
 // Authentications routes
 Auth::routes();
 
@@ -40,6 +46,8 @@ Route::get('/portfolio', [PageController::class, 'portfolio']);
 Route::get('/designer', [PageController::class, 'designer']);
 Route::get('/contact', [PageController::class, 'contact']);
 
+
+
 // Cart routes
 Route::prefix('/cart')->group(function () {
     Route::get('/', [CartController::class, 'showCart'])->name('cart');
@@ -53,6 +61,10 @@ Route::prefix('/wishlist')->group(function () {
     Route::get('/', [WishlistController::class, 'showWishlist'])->name('wishlist');
     Route::post('/add', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
     Route::delete('/delete/{id}', [WishlistController::class, 'deleteWishlist'])->name('wishlist.delete');
+});
+
+Route::prefix('/checkout')->group(function () {
+    Route::get('/', [CheckoutController::class, 'checkoutPage'])->name('checkout');
 });
 
 // Setting routes

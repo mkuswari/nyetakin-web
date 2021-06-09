@@ -41,7 +41,7 @@
                     </div>
                     <div class="checkout_btn_inner float-right">
                         <a class="btn_1" href="{{ url('/product') }}">Continue Shopping</a>
-                        <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                        <a class="btn_1 checkout_btn_1" href="{{ route("checkout") }}">Proceed to checkout</a>
                     </div>
                 </div>
             </div>
@@ -97,23 +97,6 @@
                 }
             });
         });
-
-        // $(document).on('click', '.btn-delete', function() {
-        //     var cart = $(this).data('cart');
-        //     $.ajax({
-        //         data: {
-        //             "cart": cart
-        //         },
-        //         url: "/cart/delete",
-        //         type: "post",
-        //         success: function(resp) {
-        //             $('#appendCartData').html(resp.view);
-        //         },
-        //         error: function() {
-        //             alert("error");
-        //         }
-        //     })
-        // });
 
     </script>
 @endpush

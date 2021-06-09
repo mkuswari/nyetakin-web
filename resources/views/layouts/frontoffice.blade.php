@@ -5,6 +5,10 @@
 @include('layouts.components.frontoffice.head')
 
 <body>
+
+    {{-- include sweet alert --}}
+    @include('sweetalert::alert')
+
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
