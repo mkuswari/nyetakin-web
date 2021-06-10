@@ -24,10 +24,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route untuk Rajaongkir
-Route::get('/cities/{province_id}', [CheckoutController::class, 'getCities']);
-Route::post('/cek-ongkir', [CheckoutController::class, 'getCost'])->name('cek-ongkir');
-
 
 // Authentications routes
 Auth::routes();
@@ -46,7 +42,15 @@ Route::get('/portfolio', [PageController::class, 'portfolio']);
 Route::get('/designer', [PageController::class, 'designer']);
 Route::get('/contact', [PageController::class, 'contact']);
 
+// Route untuk Rajaongkir dan Checkout
+Route::get('/cities/{province_id}', [CheckoutController::class, 'getCities']);
+Route::post('/cek-ongkir', [CheckoutController::class, 'getCost'])->name('cek-ongkir');
 
+// Checkout routes
+Route::prefix('/checkout')->group(function () {
+    Route::post('/', [CheckoutController::class, 'checkoutAction'])->name('checkout');
+    Route::get('/overview/{id}', [CheckoutController::class, 'checkoutOverview'])->name('checkout.overview');
+});
 
 // Cart routes
 Route::prefix('/cart')->group(function () {

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\City;
 use App\Models\Courier;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -45,8 +47,62 @@ class CheckoutController extends Controller
         return json_encode($cost);
     }
 
-    public function checkoutAction()
+    public function checkoutAction(Request $request)
     {
-        //
+        $this->validate($request, [
+            "name" => "required",
+            "phone" => "required",
+            "email" => "required",
+            "province_destination" => "required",
+            "city_destination" => "required",
+            "address" => "required",
+            "zip_code" => "required",
+            "courier" => "required",
+            "services" => "required",
+            "total_billing" => "required",
+        ]);
+
+        $order = Order::create([
+            "user_id" => Auth::user()->id,
+            "invoice_number" => '#INV' . uniqid(),
+            "name" => $request->name,
+            "phone" => $request->phone,
+            "email" => $request->email,
+            "province_destination" => $request->province_destination,
+            "city_destination" => $request->city_destination,
+            "address" => $request->address,
+            "zip_code" => $request->zip_code,
+            "courier" => $request->courier,
+            "services" => $request->services,
+            "total_billing" => $request->total_billing,
+            "status" => 0
+        ]);
+
+        $carts = Cart::where("user_id", Auth::user()->id)->get();
+
+        foreach ($carts as $cart) {
+            OrderDetail::create([
+                "order_id" => $order->id,
+                "product_id" => $cart->product_id,
+                "quantity" => $cart->quantity,
+            ]);
+
+            $cart->delete();
+        }
+
+        return redirect()->route("checkout.overview", $order->id);
+    }
+
+    public function checkoutOverview($id)
+    {
+        $detail = Order::find($id);
+        $getCity = City::where("city_id", $detail->city_destination)->first();
+        $city = $getCity->name;
+        $getProvince = Province::where("province_id", $detail->province_destination)->first();
+        $province = $getProvince->name;
+
+        $items = OrderDetail::with('product')->where("order_id", $id)->get();
+
+        return view("frontoffice.checkout.overview", compact('detail', "city", "province", "items"));
     }
 }
