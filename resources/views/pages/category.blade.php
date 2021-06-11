@@ -35,7 +35,7 @@
             <div class="row">
                 @foreach ($categories as $category)
                     <div class="col-sm-4">
-                        <a href="" class="text-center">
+                        <a href="{{ url('category/' . $category->slug) }}" class="text-center">
                             <img src="{{ asset('uploads/categories/' . $category->image) }}"
                                 class="category-image shadow mb-3">
                             <h4>{{ $category->name }}</h4>

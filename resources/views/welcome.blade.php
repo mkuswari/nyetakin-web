@@ -138,7 +138,6 @@
                                             <h4>{{ $product->name }}</h4>
                                         </a>
                                         <h3>IDR. {{ number_format($product->selling_price) }}</h3>
-                                        <a href="#" class="add_cart"><i class="ti-shopping-cart"></i> Add to Cart</a>
                                     </div>
                                 </div>
                             </div>

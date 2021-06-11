@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
@@ -81,6 +82,7 @@ Route::prefix('/setting')->group(function () {
 // Frontoffice routes
 Route::prefix('/home')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/orders', [HomeController::class, 'myOrder'])->name('home.order');
 });
 
 
@@ -93,4 +95,5 @@ Route::prefix('/dashboard')->group(function () {
         '/portfolios' => PortfolioController::class,
     ], ['except' => ['show']]);
     Route::resource('/products', ProductController::class);
+    Route::resource('/orders', OrderController::class)->except('create', 'store');
 });

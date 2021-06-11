@@ -48,8 +48,8 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="email">E-mail Penerima</label>
-                                <input type="text" class="form-control" id="email"
-                                    name="email @error('email') is-invalid @enderror" placeholder="E-mail"
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
+                                    name="email" placeholder="E-mail"
                                     value="{{ Auth::user()->email }}" />
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -146,7 +146,7 @@
                             </div>
                             <div class="col-md-12 form-group p_star d-none">
                                 <label for="total_billing">Total Tagihan</label>
-                                <input type="number" name="total_billing" id="total_billing" value="0">
+                                <input type="number" name="total_billing" id="total_billing">
                             </div>
                         </div>
                         <div class="col-lg-5">

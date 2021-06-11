@@ -12,7 +12,7 @@
                             data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a>
                 </li>
                 <li class="list-divider"></li>
-                <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
+                <li class="nav-small-cap"><span class="hide-menu">Master Data</span></li>
                 @if (Auth::user()->role == 'admin')
                     <li class="sidebar-item">
                         <a class="sidebar-link sidebar-link" href="{{ route('users.index') }}"
@@ -41,16 +41,32 @@
                             Portfolio</span>
                     </a>
                 </li>
+                <li class="list-divider"></li>
+                <span class="nav-small-cap"><span class="hide-menu">Data Transaksi</span></span>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{ route("orders.index") }}" aria-expanded="false"><i data-feather="package"
+                            class="feather-icon"></i><span class="hide-menu">Kelola
+                            Pesanan</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="credit-card"
                             class="feather-icon"></i><span class="hide-menu">Kelola
-                            Transaksi</span>
+                            Pembayaran</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="truck"
                             class="feather-icon"></i><span class="hide-menu">Kelola
                             Pengiriman</span>
+                    </a>
+                </li>
+                <li class="list-divider"></li>
+                <li class="nav-small-cap"><span class="hide-menu">Data Lainnya</span></li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="message-circle"
+                            class="feather-icon"></i><span class="hide-menu">Kelola
+                            Review</span>
                     </a>
                 </li>
                 <li class="list-divider"></li>

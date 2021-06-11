@@ -11,7 +11,7 @@ class PageController extends Controller
     public function index()
     {
         $categories = Category::paginate(4);
-        $products = Product::paginate(8);
+        $products = Product::where("status", "active")->paginate(8);
         return view('welcome', compact('categories', 'products'));
     }
 
@@ -24,13 +24,27 @@ class PageController extends Controller
     public function categoryDetail($slug)
     {
         $category = Category::where("slug", $slug)->first();
-        return view('pages.single.category', compact("category"));
+        $products = Product::where([
+            ["category_id", $category->id],
+            ["status", "active"]
+        ])->paginate(10);
+
+        return view('pages.single.category', compact("category", "products"));
     }
 
-    public function product()
+    public function product(Request $request)
     {
-        $products = Product::all();
+        $products = Product::paginate(10);
         $categories = Category::all();
+
+        $filterKeyword = $request->get("keyword");
+        if ($filterKeyword) {
+            $products = Product::where([
+                ["name", "LIKE", "%$filterKeyword%"],
+                ["status", "active"]
+            ])->paginate(10);
+        }
+
         return view('pages.product', compact("products", "categories"));
     }
 

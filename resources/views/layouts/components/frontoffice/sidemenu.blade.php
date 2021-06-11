@@ -14,10 +14,16 @@
         <hr>
         <div class="single_footer_part">
             <h5>Main Menu</h5>
-            <a href="">
+            <a href="{{ route('home') }}">
                 <div class="panel-link">
                     <i class="fa fa-home"></i>
                     <span>Home</span>
+                </div>
+            </a>
+            <a href="{{ route('home.order') }}">
+                <div class="panel-link">
+                    <i class="fa fa-truck"></i>
+                    <span>Pesanan Saya</span>
                 </div>
             </a>
             <a href="{{ route('profile') }}">

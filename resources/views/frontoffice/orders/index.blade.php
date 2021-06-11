@@ -1,7 +1,7 @@
 @extends('layouts.frontoffice')
 
 @section('title')
-    Nyetakin - Akun Saya
+    Nyetakin - Pesanan Saya
 @endsection
 
 @push('styles')
@@ -23,7 +23,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="tracking_box_inner">
-                        <h1 class="font-weight-bold">Dashboard</h1>
+                        <h1 class="font-weight-bold">Pesanan Saya</h1>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,26 @@
                 <div class="col-sm-9">
                     <div class="card mb-3 shadow border-0">
                         <div class="card-body">
-                            <h3>Dashboard</h3>
+                            <h3>List Pesanan</h3>
                             <hr>
+                            <table class="table">
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Kode Invoice</th>
+                                    <th>Total Tagihan</th>
+                                    <th>Aksi</th>
+                                </tr>
+                                @foreach ($orders as $order)
+                                    <tr>
+                                        <td>{{ $order->created_at }}</td>
+                                        <td>{{ \Str::upper($order->invoice_number) }}</td>
+                                        <td>Rp. {{ number_format($order->total_billing) }}</td>
+                                        <td>
+                                            <a href="" class="btn btn-info btn-sm shadow">Detail</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </table>
                         </div>
                     </div>
                 </div>
