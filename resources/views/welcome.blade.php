@@ -16,15 +16,13 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
+                                            <h1>Beragam Kebutuhan</h1>
+                                            <p>Temukan beragam kebutuhan percetakan dan cetak custom kamu hanya di nyetakin</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="{{ asset('frontoffice/img/banner_img.png') }}" alt="">
+                                    <img src="{{ asset('frontoffice/img/sliders/slide-1.svg') }}" style="width: 500px;">
                                 </div>
                             </div>
                         </div>
@@ -33,15 +31,13 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Cloth & Wood
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
+                                            <h1>Jasa Design Custom</h1>
+                                            <p>Ingin mencetak sesuatu sesuai dengan selera kamu? kami juga menyediakan jasa cetak custom loh.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="{{ asset('frontoffice/img/banner_img.png') }}" alt="">
+                                    <img src="{{ asset('frontoffice/img/sliders/slide-2.svg') }}" style="width: 500px;">
                                 </div>
                             </div>
                         </div>
@@ -50,31 +46,13 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
+                                            <h1>Mudah dan Murah</h1>
+                                            <p>Rasakan kemudahan dan tarif mudah yang kami berikan, kepuasan anda adalah prestasi bagi kami.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="{{ asset('frontoffice/img/banner_img.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Cloth $ Wood Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="{{ asset('frontoffice/img/banner_img.png') }}" alt="">
+                                    <img src="{{ asset('frontoffice/img/sliders/slide-3.svg') }}" style="width: 500px;">
                                 </div>
                             </div>
                         </div>
