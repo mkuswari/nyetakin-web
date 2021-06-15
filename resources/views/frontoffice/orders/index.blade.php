@@ -48,6 +48,7 @@
                                     <th>Tanggal</th>
                                     <th>Kode Invoice</th>
                                     <th>Total Tagihan</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                                 @foreach ($orders as $order)
@@ -56,7 +57,19 @@
                                         <td>{{ \Str::upper($order->invoice_number) }}</td>
                                         <td>Rp. {{ number_format($order->total_billing) }}</td>
                                         <td>
-                                            <a href="" class="btn btn-info btn-sm shadow">Detail</a>
+                                            @if ($order->status == 0)
+                                                <span class="badge badge-warning">Menunggu Pembayaran</span>
+                                            @elseif($order->status == 1)
+                                                <span class="badge badge-danger">Dibatalkan</span>
+                                            @elseif ($order->status == 2)
+                                                <span class="badge badge-info">Sudah Dibayar</span>
+                                            @else
+                                                <span class="badge badge-success">Dikirimkan</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('home.order.detail', [$order->id]) }}"
+                                                class="btn btn-info btn-sm shadow">Detail</a>
                                         </td>
                                     </tr>
                                 @endforeach

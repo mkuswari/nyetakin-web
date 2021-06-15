@@ -65,12 +65,12 @@
                                         <td>
                                             <a href="{{ route('orders.show', [$order->id]) }}"
                                                 class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-                                            <a href="{{ route('categories.edit', [$order->id]) }}"
+                                            <a href="{{ route('orders.edit', [$order->id]) }}"
                                                 class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
                                             {{-- delete action --}}
-                                            <form action="{{ route('categories.destroy', [$order->id]) }}" method="POST"
+                                            <form action="{{ route('orders.destroy', [$order->id]) }}" method="POST"
                                                 class="d-inline"
-                                                onsubmit="return confirm('Hapus Kategori {{ $order->name }} dari sistem secara permanent?')">
+                                                onsubmit="return confirm('Hapus Order {{ $order->invoice_number }} dari sistem secara permanent?')">
                                                 @csrf
                                                 @method("DELETE")
                                                 <button type="submit" class="btn btn-danger btn-sm"><i

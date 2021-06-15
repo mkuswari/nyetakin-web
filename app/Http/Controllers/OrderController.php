@@ -62,7 +62,15 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+
+        $order->update([
+            "status" => $request->status
+        ]);
+
+        session()->flash('success', 'Status Pesanan berhasil diupdates');
+
+        return redirect()->route("orders.index");
     }
 
     /**
@@ -73,6 +81,12 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+
+        $order->delete();
+
+        session()->flash('success', 'Data Order telah dihapus');
+
+        return redirect()->route("orders.index");
     }
 }

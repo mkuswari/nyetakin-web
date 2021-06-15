@@ -83,6 +83,7 @@ Route::prefix('/setting')->group(function () {
 Route::prefix('/home')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/orders', [HomeController::class, 'myOrder'])->name('home.order');
+    Route::get('/orders/detail/{id}', [HomeController::class, 'detailOrder'])->name('home.order.detail');
 });
 
 
