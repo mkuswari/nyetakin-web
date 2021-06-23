@@ -39,6 +39,7 @@ Route::get('/product', [PageController::class, 'product']);
 Route::get('/product/{slug}', [PageController::class, 'productDetail']);
 // portfolios
 Route::get('/portfolio', [PageController::class, 'portfolio']);
+Route::get('/portfolio/{slug}', [PageController::class, 'portfolioDetail']);
 // designers
 Route::get('/designer', [PageController::class, 'designer']);
 Route::get('/contact', [PageController::class, 'contact']);

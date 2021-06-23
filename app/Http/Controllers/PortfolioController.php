@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PortfolioController extends Controller
 {
@@ -50,6 +51,7 @@ class PortfolioController extends Controller
         $request->thumbnail->move(public_path('uploads/portfolios/'), $thumbName);
 
         Portfolio::create([
+            "user_id" => Auth::user()->id,
             "name" => $request->name,
             "slug" => $slug,
             "thumbnail" => $thumbName,
@@ -102,6 +104,7 @@ class PortfolioController extends Controller
         }
 
         $portfolio->update([
+            "user_id" => Auth::user()->id,
             "name" => $request->name,
             "slug" => $slug,
             "thumbnail" => $thumbName,

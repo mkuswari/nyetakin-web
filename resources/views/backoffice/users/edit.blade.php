@@ -70,7 +70,7 @@
                                     <label for="current_avatar" class="col-sm-2 col-form-label">Foto Profil</label>
                                     <div class="col-sm-10">
                                         @if (!$user->avatar)
-                                            <img src="{{ asset('uploads/avatars/default/placeholder.png') }}"
+                                            <img src="{{ asset('uploads/avatars/default/placeholder.jpg') }}"
                                                 class="avatar-thumbnail">
                                         @else
                                             <img src="{{ asset('uploads/avatars/' . $user->avatar) }}"

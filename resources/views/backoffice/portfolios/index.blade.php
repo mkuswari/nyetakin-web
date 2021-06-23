@@ -56,8 +56,14 @@
                                             <img src="{{ asset('uploads/portfolios/' . $portfolio->thumbnail) }}"
                                                 class="portfolio-thumbnail">
                                         </td>
-                                        <td>{{ $portfolio->title }}</td>
-                                        <td><small>{{ $portfolio->description }}</small></td>
+                                        <td>{{ $portfolio->name }}</td>
+                                        <td><small>
+                                                @if ($portfolio->description)
+                                                    {{ $portfolio->description }}
+                                                @else
+                                                    Tidak ada deskripsi portfolio
+                                                @endif
+                                            </small></td>
                                         <td>{{ $portfolio->created_at }}</td>
                                         <td>
                                             <a href="{{ route('portfolios.edit', [$portfolio->id]) }}"

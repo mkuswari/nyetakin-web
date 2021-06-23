@@ -17,7 +17,8 @@
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
                                             <h1>Beragam Kebutuhan</h1>
-                                            <p>Temukan beragam kebutuhan percetakan dan cetak custom kamu hanya di nyetakin</p>
+                                            <p>Temukan beragam kebutuhan percetakan dan cetak custom kamu hanya di nyetakin
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -32,7 +33,8 @@
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
                                             <h1>Jasa Design Custom</h1>
-                                            <p>Ingin mencetak sesuatu sesuai dengan selera kamu? kami juga menyediakan jasa cetak custom loh.</p>
+                                            <p>Ingin mencetak sesuatu sesuai dengan selera kamu? kami juga menyediakan jasa
+                                                cetak custom loh.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +49,8 @@
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
                                             <h1>Mudah dan Murah</h1>
-                                            <p>Rasakan kemudahan dan tarif mudah yang kami berikan, kepuasan anda adalah prestasi bagi kami.</p>
+                                            <p>Rasakan kemudahan dan tarif mudah yang kami berikan, kepuasan anda adalah
+                                                prestasi bagi kami.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -140,41 +143,20 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-12">
                     <div class="best_product_slider owl-carousel">
-                        <div class="single_product_item">
-                            <img src="{{ asset('frontoffice/img/product/product_1.png') }}" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                        @foreach ($designers as $designer)
+                            <div class="single_product_item">
+                                @if (!$designer->avatar)
+                                    <img src="{{ asset('uploads/avatars/default/placeholder.jpg') }}"
+                                        class="rounded-circle">
+                                @else
+                                    <img src="{{ asset('uploads/avatars/' . $designer->avatar) }}"
+                                        class="rounded-circle">
+                                @endif
+                                <div class="single_product_text text-center">
+                                    <h4 class="font-weight-normal">{{ $designer->name }}</h4>
+                                </div>
                             </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{{ asset('frontoffice/img/product/product_2.png') }}" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{{ asset('frontoffice/img/product/product_3.png') }}" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{{ asset('frontoffice/img/product/product_4.png') }}" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{{ asset('frontoffice/img/product/product_5.png') }}" alt="">
-                            <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

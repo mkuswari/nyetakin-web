@@ -54,9 +54,12 @@ class UserController extends Controller
             "password_confirmation" => ['required'],
         ]);
 
-        // upload gambar
-        $imgName = $request->email . '.' .  $request->avatar->extension();
-        $request->avatar->move(public_path('uploads/avatars/'), $imgName);
+        if ($request->hasFile("avatar")) {
+            $imgName = $request->email . '.' .  $request->avatar->extension();
+            $request->avatar->move(public_path('uploads/avatars/'), $imgName);
+        } else {
+            $imgName = "";
+        }
 
         User::create([
             "name" => $request->name,

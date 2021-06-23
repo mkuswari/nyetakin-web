@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Portfolio;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -12,7 +14,8 @@ class PageController extends Controller
     {
         $categories = Category::paginate(4);
         $products = Product::where("status", "active")->paginate(8);
-        return view('welcome', compact('categories', 'products'));
+        $designers = User::where("role", "designer")->paginate(4);
+        return view('welcome', compact('categories', 'products', 'designers'));
     }
 
     public function category()
@@ -57,12 +60,23 @@ class PageController extends Controller
 
     public function portfolio()
     {
-        return view('pages.portfolio');
+        $portfolios = Portfolio::all();
+
+        return view('pages.portfolio', compact("portfolios"));
+    }
+
+    public function portfolioDetail($slug)
+    {
+        $portfolio = Portfolio::where("slug", $slug)->first();
+
+        return view("pages.single.portfolio", compact("portfolio"));
     }
 
     public function designer()
     {
-        return view('pages.designer');
+        $designers = User::where("role", "designer")->paginate(6);
+
+        return view('pages.designer', compact("designers"));
     }
 
     public function contact()
