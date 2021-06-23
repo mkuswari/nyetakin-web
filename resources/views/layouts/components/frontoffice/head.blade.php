@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('frontoffice/css/slick.css') }}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ asset('frontoffice/css/style.css') }}">
+    {{-- app cSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     {{-- stack styles --}}
     @stack('styles')
 </head>

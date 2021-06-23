@@ -157,35 +157,14 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="review_box">
-                                <h4>Tulis Review</h4>
-                                <p>Rating:</p>
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <h4>Berikan Ulasan</h4>
+                                <span class="star-rating star-5">
+                                    <input type="radio" name="rating" value="1"><i></i>
+                                    <input type="radio" name="rating" value="2"><i></i>
+                                    <input type="radio" name="rating" value="3"><i></i>
+                                    <input type="radio" name="rating" value="4"><i></i>
+                                    <input type="radio" name="rating" value="5"><i></i>
+                                </span>
                                 <form class="row contact_form" action="contact_process.php" method="post"
                                     novalidate="novalidate">
                                     <div class="col-md-12">

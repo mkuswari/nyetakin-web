@@ -34,7 +34,8 @@
         <div class="hearer_icon d-flex">
             <a href="{{ route('home') }}"><i class="fas fa-user"></i></a>
             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
-            <a href="{{ route('wishlist') }}"><i class="ti-heart"></i></a>
+            <a href="{{ route('wishlist') }}"><i class="ti-heart"></i><sup><span
+                        class="badge badge-danger">{{ App\Models\Wishlist::countUserWishlist() }}</span></sup></a>
             <a href="{{ route('cart') }}"><i class="fas fa-cart-plus"></i><sup><span
                         class="badge badge-danger">{{ App\Models\Cart::countUserCart() }}</span></sup></a>
         </div>
