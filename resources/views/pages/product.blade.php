@@ -22,25 +22,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="product_top_bar d-flex justify-content-between align-items-center">
-                        <div class="single_product_menu">
-                            <p>Temukan produk yang kamu inginkan</p>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-lg-8 col-sm-6">
+                            <h3>Temukan Produk yang Kamu Inginkan</h3>
                         </div>
-                        <div class="single_product_menu">
+                        <div class="col-lg-4 col-sm-6">
                             <form action="{{ url('product') }}">
-                                <div class="input-group">
+                                <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="keyword" id="keyword"
-                                        placeholder="Cari Item" aria-describedby="inputGroupPrepend">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend"><i
-                                                class="ti-search"></i></span>
+                                        placeholder="Cari Nama Item">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary shadow" type="button" id="button-addon2"><i
+                                                class="fas fa-search"></i> Cari</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="row align-items-center latest_product_inner">
-                        @foreach ($products as $product)
+                        @forelse ($products as $product)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_product_item">
                                     <img src="{{ asset('uploads/products/' . $product->thumbnail) }}" alt="">
@@ -52,7 +52,12 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div class="mx-auto mt-5">
+                                <img src="{{ asset('img/empty-state.svg') }}" width="550">
+                                <h3 class="text-center mt-3">Uppss! Item belum tersedia.</h3>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>

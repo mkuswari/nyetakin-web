@@ -90,97 +90,66 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="review_list">
-                                <div class="review_item">
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <img src="img/product/single-product/review-1.png" alt="" />
+                                @forelse ($reviews as $review)
+                                    <div class="review_item">
+                                        <div class="media">
+                                            <div class="d-flex">
+                                                <img src="img/product/single-product/review-1.png" alt="" />
+                                            </div>
+                                            <div class="media-body">
+                                                <h4>Blake Ruiz</h4>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <h4>Blake Ruiz</h4>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna
+                                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex ea commodo
+                                        </p>
                                     </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo
-                                    </p>
-                                </div>
-                                <div class="review_item">
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <img src="img/product/single-product/review-2.png" alt="" />
-                                        </div>
-                                        <div class="media-body">
-                                            <h4>Blake Ruiz</h4>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo
-                                    </p>
-                                </div>
-                                <div class="review_item">
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <img src="img/product/single-product/review-3.png" alt="" />
-                                        </div>
-                                        <div class="media-body">
-                                            <h4>Blake Ruiz</h4>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo
-                                    </p>
-                                </div>
+                                @empty
+                                    <img src="{{ asset('img/empty-state.svg') }}">
+                                    <p class="text-center">Belum ada Ulasan tentang produk ini</p>
+                                @endforelse
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="review_box">
                                 <h4>Berikan Ulasan</h4>
-                                <span class="star-rating star-5">
-                                    <input type="radio" name="rating" value="1"><i></i>
-                                    <input type="radio" name="rating" value="2"><i></i>
-                                    <input type="radio" name="rating" value="3"><i></i>
-                                    <input type="radio" name="rating" value="4"><i></i>
-                                    <input type="radio" name="rating" value="5"><i></i>
-                                </span>
-                                <form class="row contact_form" action="contact_process.php" method="post"
+                                <form class="row contact_form" action="{{ route('add-review') }}" method="post"
                                     novalidate="novalidate">
+                                    @csrf
+                                    <div class="col-md-12 mb-3">
+                                        <span class="star-rating star-5">
+                                            <input type="radio" name="rating" value="1"><i></i>
+                                            <input type="radio" name="rating" value="2"><i></i>
+                                            <input type="radio" name="rating" value="3"><i></i>
+                                            <input type="radio" name="rating" value="4"><i></i>
+                                            <input type="radio" name="rating" value="5"><i></i>
+                                        </span>
+                                    </div>
                                     <div class="col-md-12">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Nama" />
+                                            <input type="text" class="form-control" name="name" placeholder="Nama"
+                                                value="{{ Auth::user()->name }}" readonly />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Email" />
+                                            <input type="email" class="form-control" name="email" placeholder="Email"
+                                                value="{{ Auth::user()->email }}" readonly />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="message" rows="2"
-                                                placeholder="Isi ulasan"></textarea>
+                                            <textarea class="form-control" name="review_contents" rows="4"
+                                                placeholder="Pesan Ulasan"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12 text-right">

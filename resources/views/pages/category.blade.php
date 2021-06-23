@@ -33,7 +33,7 @@
     <section class="section_categories mt-5">
         <div class="container">
             <div class="row">
-                @foreach ($categories as $category)
+                @forelse ($categories as $category)
                     <div class="col-sm-4">
                         <a href="{{ url('category/' . $category->slug) }}" class="text-center">
                             <img src="{{ asset('uploads/categories/' . $category->image) }}"
@@ -41,7 +41,12 @@
                             <h4>{{ $category->name }}</h4>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <div class="mx-auto mt-5">
+                        <img src="{{ asset('img/empty-state.svg') }}" width="550">
+                        <h3 class="text-center mt-3">Uppss! Item belum tersedia.</h3>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>

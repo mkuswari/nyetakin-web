@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Portfolio;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -55,7 +56,8 @@ class PageController extends Controller
     {
         $product = Product::where("slug", $slug)->first();
         $products = Product::all();
-        return view("pages.single.product", compact("product", "products"));
+        $reviews = Review::all();
+        return view("pages.single.product", compact("product", "products", "reviews"));
     }
 
     public function portfolio()

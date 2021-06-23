@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PortfolioController;
@@ -47,6 +48,9 @@ Route::get('/contact', [PageController::class, 'contact']);
 // Route untuk Rajaongkir dan Checkout
 Route::get('/cities/{province_id}', [CheckoutController::class, 'getCities']);
 Route::post('/cek-ongkir', [CheckoutController::class, 'getCost'])->name('cek-ongkir');
+
+// Add Reviews Product routes
+Route::post("/add-review", [MainController::class, "addReview"])->name("add-review");
 
 // Checkout routes
 Route::prefix('/checkout')->group(function () {

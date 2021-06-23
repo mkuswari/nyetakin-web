@@ -67,7 +67,7 @@
     <!-- banner part start-->
 
     <!-- product_list part start-->
-    <section class="product_list best_seller section_padding">
+    <section class="product_list best_seller py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -79,7 +79,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-12">
                     <div class="best_product_slider owl-carousel">
-                        @foreach ($categories as $category)
+                        @forelse ($categories as $category)
                             <a href="{{ url('category/' . $category->slug) }}">
                                 <div class="single_product_item">
                                     <img src="{{ asset('uploads/categories/' . $category->image) }}"
@@ -89,7 +89,15 @@
                                     </div>
                                 </div>
                             </a>
-                        @endforeach
+                        @empty
+                            <div class="mx-auto mt-5">
+                                <img src="{{ asset('img/empty-state.svg') }}" width="550">
+                                <h3 class="text-center mt-3">Uppss! Item belum tersedia.</h3>
+                            </div>
+                        @endforelse
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{{ url('category') }}">Lihat semua kategori</a>
                     </div>
                 </div>
             </div>
@@ -98,7 +106,7 @@
     <!-- product_list part end-->
 
     <!-- product_list start-->
-    <section class="product_list section_padding">
+    <section class="product_list bg-light py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -110,9 +118,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row align-items-center">
-                        @foreach ($products as $product)
+                        @forelse ($products as $product)
                             <div class="col-lg-3 col-sm-6">
-                                <div class="single_product_item">
+                                <div class="single_product_item text-center">
                                     <img src="{{ asset('uploads/products/' . $product->thumbnail) }}" alt="">
                                     <div class="single_product_text">
                                         <a href="{{ url('product/' . $product->slug) }}">
@@ -122,7 +130,15 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div class="mx-auto mt-5">
+                                <img src="{{ asset('img/empty-state.svg') }}" width="550">
+                                <h3 class="text-center mt-3">Uppss! Item belum tersedia.</h3>
+                            </div>
+                        @endforelse
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{{ url('product') }}">Lihat semua produk</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +147,7 @@
     <!-- product_list part start-->
 
     <!-- product_list part start-->
-    <section class="product_list best_seller section_padding">
+    <section class="product_list best_seller py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -143,7 +159,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-12">
                     <div class="best_product_slider owl-carousel">
-                        @foreach ($designers as $designer)
+                        @forelse ($designers as $designer)
                             <div class="single_product_item">
                                 @if (!$designer->avatar)
                                     <img src="{{ asset('uploads/avatars/default/placeholder.jpg') }}"
@@ -156,7 +172,15 @@
                                     <h4 class="font-weight-normal">{{ $designer->name }}</h4>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <div class="mx-auto mt-5">
+                                <img src="{{ asset('img/empty-state.svg') }}" width="550">
+                                <h3 class="text-center mt-3">Uppss! Item belum tersedia.</h3>
+                            </div>
+                        @endforelse
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{{ url('designer') }}">Lihat semua Desainer</a>
                     </div>
                 </div>
             </div>
