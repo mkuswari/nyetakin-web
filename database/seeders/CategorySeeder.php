@@ -30,11 +30,6 @@ class CategorySeeder extends Seeder
                 "slug" => \Str::slug("Angpao Lebaran"),
                 "image" => "angpao-lebaran.jpg",
             ],
-            [
-                "name" => "Stiker",
-                "slug" => \Str::slug("Stiker"),
-                "image" => "stiker.jpg",
-            ],
         ];
 
         foreach ($categories as $category) {

@@ -8,7 +8,7 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false"><i
+                    <a class="sidebar-link sidebar-link" href="{{ url('/dashboard') }}" aria-expanded="false"><i
                             data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a>
                 </li>
                 <li class="list-divider"></li>
@@ -44,8 +44,8 @@
                 <li class="list-divider"></li>
                 <span class="nav-small-cap"><span class="hide-menu">Data Transaksi</span></span>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route("orders.index") }}" aria-expanded="false"><i data-feather="package"
-                            class="feather-icon"></i><span class="hide-menu">Kelola
+                    <a class="sidebar-link sidebar-link" href="{{ route('orders.index') }}" aria-expanded="false"><i
+                            data-feather="package" class="feather-icon"></i><span class="hide-menu">Kelola
                             Pesanan</span>
                     </a>
                 </li>

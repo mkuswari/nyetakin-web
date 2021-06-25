@@ -60,6 +60,9 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="col-md-12">
+                            <small class="text-muted">Password harus terdiri dari minimal 1 Huruf Kapital, dan 1 Angka</small>
+                        </div>
                         <div class="col-md-12 form-group">
                             <button type="submit" value="submit" class="btn_3">
                                 Register

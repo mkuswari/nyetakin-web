@@ -13,14 +13,12 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">236</h2>
-                                    <span
-                                        class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ $total_users }}</h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Clients</h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Jumlah Pengguna</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
                             </div>
                         </div>
                     </div>
@@ -29,13 +27,12 @@
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
-                                <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
-                                        class="set-doller">$</sup>18,306</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Earnings of Month
+                                <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">{{ $total_products }}</h2>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Jumlah Produk
                                 </h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i data-feather="dollar-sign"></i></span>
+                                <span class="opacity-7 text-muted"><i data-feather="shopping-bag"></i></span>
                             </div>
                         </div>
                     </div>
@@ -45,14 +42,12 @@
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
                                 <div class="d-inline-flex align-items-center">
-                                    <h2 class="text-dark mb-1 font-weight-medium">1538</h2>
-                                    <span
-                                        class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span>
+                                    <h2 class="text-dark mb-1 font-weight-medium">{{ $total_orders }}</h2>
                                 </div>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Projects</h6>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Jumlah Pemesanan</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                <span class="opacity-7 text-muted"><i data-feather="package"></i></span>
                             </div>
                         </div>
                     </div>
@@ -61,11 +56,11 @@
                     <div class="card-body">
                         <div class="d-flex d-lg-flex d-md-block align-items-center">
                             <div>
-                                <h2 class="text-dark mb-1 font-weight-medium">864</h2>
-                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Projects</h6>
+                                <h2 class="text-dark mb-1 font-weight-medium">{{ $total_reviews }}</h2>
+                                <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Jumlah Ulasan</h6>
                             </div>
                             <div class="ml-auto mt-md-3 mt-lg-0">
-                                <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                                <span class="opacity-7 text-muted"><i data-feather="message-circle"></i></span>
                             </div>
                         </div>
                     </div>

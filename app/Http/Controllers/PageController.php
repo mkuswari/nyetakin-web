@@ -57,6 +57,7 @@ class PageController extends Controller
         $product = Product::where("slug", $slug)->first();
         $products = Product::all();
         $reviews = Review::all();
+
         return view("pages.single.product", compact("product", "products", "reviews"));
     }
 
