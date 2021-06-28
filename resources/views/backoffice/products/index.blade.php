@@ -44,9 +44,9 @@
                                     <th>Nama Produk</th>
                                     <th>Harga</th>
                                     <td>Berat</td>
-                                    <td>Stok</td>
                                     <td>Status</td>
-                                    <th>Tanggal Dibuat</th>
+                                    <th>Tanggal Ditambahkan</th>
+                                    <th>Terakhir Diperbarui</th>
                                     <th width="50">Aksi</th>
                                 </tr>
                             </thead>
@@ -62,7 +62,6 @@
                                         <td>{{ $product->name }}</td>
                                         <td>Rp. {{ number_format($product->selling_price) }}</td>
                                         <td>{{ $product->weight }} Kg</td>
-                                        <td>{{ $product->stock }} Item</td>
                                         <td>
                                             @if ($product->status == 'active')
                                                 <span class="badge badge-success">Aktif</span>
@@ -71,6 +70,7 @@
                                             @endif
                                         </td>
                                         <td>{{ $product->created_at }}</td>
+                                        <td>{{ $product->updated_at }}</td>
                                         <td>
                                             <a href="{{ route('products.show', [$product->id]) }}"
                                                 class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>

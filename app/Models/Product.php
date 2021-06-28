@@ -19,7 +19,6 @@ class Product extends Model
         'initial_price',
         'selling_price',
         'weight',
-        'stock',
         'status',
     ];
 

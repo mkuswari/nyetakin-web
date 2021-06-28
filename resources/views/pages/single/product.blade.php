@@ -34,7 +34,13 @@
                                     <span>Kategori</span> : {{ $product->category->name }}</a>
                             </li>
                             <li>
-                                <a href="#"> <span>Stok</span> : {{ $product->stock }}</a>
+                                <a class="active" href="#">
+                                    <span>Status</span> : @if ($product->status == 'active')
+                                        <span class="badge badge-success text-white shadow">Tersedia</span>
+                                    @else
+                                        <span class="badge badge-danger text-white shadow">Tidak tersedia</span>
+                                    @endif
+                                </a>
                             </li>
                         </ul>
                         <p>

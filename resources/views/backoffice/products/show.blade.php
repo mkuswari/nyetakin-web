@@ -41,8 +41,6 @@
                                 <p>Rp. {{ $product->selling_price }}</p>
                                 <b>Berat : </b>
                                 <p>{{ $product->weight }}</p>
-                                <b>Stok Barang : </b>
-                                <p>{{ $product->stock }}</p>
                                 <b>Status : </b>
                                 <p>
                                     @if ($product->status == 'active')
@@ -54,6 +52,10 @@
                                 <b>Tanggal Ditambahkan : </b>
                                 <p>
                                     {{ $product->created_at }}
+                                </p>
+                                <b>Terakhir diperbarui : </b>
+                                <p>
+                                    {{ $product->updated_at }}
                                 </p>
                             </div>
                         </div>

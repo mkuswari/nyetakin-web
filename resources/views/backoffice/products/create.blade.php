@@ -127,19 +127,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="stock" class="col-sm-2 col-form-label">Stok Barang</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" name="stock" id="stock"
-                                            class="form-control @error('stock') is-invalid @enderror"
-                                            placeholder="Stok Barang...">
-                                        @error('stock')
-                                            <span class="invalid-feedback" role="alert">
-                                                {{ $message }}
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label for="status" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <select name="status" id="status" class="form-control">

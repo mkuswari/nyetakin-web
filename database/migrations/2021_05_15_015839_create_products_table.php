@@ -24,7 +24,6 @@ class CreateProductsTable extends Migration
             $table->float('initial_price');
             $table->float('selling_price');
             $table->integer('weight');
-            $table->integer('stock');
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
 

@@ -25,7 +25,6 @@ class ProductSeeder extends Seeder
                 "initial_price" => 2500,
                 "selling_price" => 3800,
                 "weight" => 120,
-                "stock" => 99,
                 "status" => "active",
             ],
             [
@@ -38,7 +37,6 @@ class ProductSeeder extends Seeder
                 "initial_price" => 3500,
                 "selling_price" => 5800,
                 "weight" => 180,
-                "stock" => 80,
                 "status" => "active",
             ],
             [
@@ -51,7 +49,6 @@ class ProductSeeder extends Seeder
                 "initial_price" => 4500,
                 "selling_price" => 8800,
                 "weight" => 180,
-                "stock" => 28,
                 "status" => "active",
             ],
             [
@@ -64,7 +61,6 @@ class ProductSeeder extends Seeder
                 "initial_price" => 2500,
                 "selling_price" => 3800,
                 "weight" => 120,
-                "stock" => 99,
                 "status" => "active",
             ]
         ];
