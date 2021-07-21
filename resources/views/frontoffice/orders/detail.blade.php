@@ -39,6 +39,11 @@
                     @include('layouts.components.frontoffice.sidemenu')
                 </div>
                 <div class="col-sm-9">
+                    @if ($detail->status == 0)
+                    <div class="alert alert-danger">
+                        <p>Pesanan ini menunggu pembayaran, <a href="{{ route("checkout.overview", $detail->id) }}">Bayar Sekarang</a></p>
+                    </div>
+                    @endif
                     <div class="card mb-3 shadow border-0">
                         <div class="card-body">
                             <h3>Detail Transaksi</h3>

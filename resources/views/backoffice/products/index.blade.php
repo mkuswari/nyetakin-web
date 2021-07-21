@@ -61,7 +61,7 @@
                                         </td>
                                         <td>{{ $product->name }}</td>
                                         <td>Rp. {{ number_format($product->selling_price) }}</td>
-                                        <td>{{ $product->weight }} Kg</td>
+                                        <td>{{ $product->weight }} g</td>
                                         <td>
                                             @if ($product->status == 'active')
                                                 <span class="badge badge-success">Aktif</span>

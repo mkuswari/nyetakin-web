@@ -7,6 +7,7 @@ use App\Models\City;
 use App\Models\Courier;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Payment;
 use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -104,5 +105,23 @@ class CheckoutController extends Controller
         $items = OrderDetail::with('product')->where("order_id", $id)->get();
 
         return view("frontoffice.checkout.overview", compact('detail', "city", "province", "items"));
+    }
+
+    public function checkoutConfirmation(Request $request)
+    {
+        $uniqueName = uniqid();
+
+        $imgName = $uniqueName . '.' . $request->payment_slip->extension();
+        $request->payment_slip->move(public_path('uploads/categories/'), $imgName);
+
+        $paymentData = Payment::create([
+            "order_id" => $request->order_id,
+            "name" => $request->name,
+            "total_amount" => $request->total_amount,
+            "payment_slip" => $imgName
+        ]);
+
+        dd($paymentData);
+
     }
 }

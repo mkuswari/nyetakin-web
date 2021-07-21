@@ -34,4 +34,9 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Product');
     }
+
+    public function payment()
+    {
+        return $this->hasMany('App\Models\Payment');
+    }
 }

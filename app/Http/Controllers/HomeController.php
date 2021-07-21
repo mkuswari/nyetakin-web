@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     public function detailOrder($id)
     {
-        $detail = Order::find($id)->where("user_id", Auth::user()->id)->first();
+        $detail = Order::find($id);
         $items = OrderDetail::with('product')->where("order_id", $id)->get();
         $getCity = City::where("city_id", $detail->city_destination)->first();
         $city = $getCity->name;
