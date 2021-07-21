@@ -109,19 +109,29 @@ class CheckoutController extends Controller
 
     public function checkoutConfirmation(Request $request)
     {
+        $this->validate($request, [
+            "name" => "required|max:64",
+            "total_amount" => "required",
+            "payment_slip" => "required|image|mimes:jpeg,png,jpg,gif|max:2048",
+        ]);
+
         $uniqueName = uniqid();
-
         $imgName = $uniqueName . '.' . $request->payment_slip->extension();
-        $request->payment_slip->move(public_path('uploads/categories/'), $imgName);
+        $request->payment_slip->move(public_path('uploads/payments/'), $imgName);
 
-        $paymentData = Payment::create([
+        Payment::create([
             "order_id" => $request->order_id,
             "name" => $request->name,
             "total_amount" => $request->total_amount,
-            "payment_slip" => $imgName
+            "payment_slip" => $imgName,
         ]);
 
-        dd($paymentData);
+        return redirect()->route('checkout.success');
 
+    }
+
+    public function checkoutSuccess()
+    {
+        return view('frontoffice.checkout.success');
     }
 }

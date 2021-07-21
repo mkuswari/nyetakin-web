@@ -58,6 +58,7 @@ Route::prefix('/checkout')->group(function () {
     Route::post('/', [CheckoutController::class, 'checkoutAction'])->name('checkout');
     Route::get('/overview/{id}', [CheckoutController::class, 'checkoutOverview'])->name('checkout.overview');
     Route::post('/payment', [CheckoutController::class, 'checkoutConfirmation'])->name('checkout.payment');
+    Route::get('/success', [CheckoutController::class, 'checkoutSuccess'])->name('checkout.success');
 });
 
 // Cart routes
