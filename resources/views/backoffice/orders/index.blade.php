@@ -55,7 +55,7 @@
                                             @if ($order->status == 0)
                                                 <span class="badge badge-warning">Menunggu Pembayaran</span>
                                             @elseif($order->status == 1)
-                                                <span class="badge badge-danger">Dibatalkan</span>
+                                                <span class="badge badge-warning">Butuh Diverifikasi</span>
                                             @elseif ($order->status == 2)
                                                 <span class="badge badge-info">Sudah Dibayar</span>
                                             @else

@@ -40,8 +40,13 @@
                 </div>
                 <div class="col-sm-9">
                     @if ($detail->status == 0)
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger text-center">
                         <p>Pesanan ini menunggu pembayaran, <a href="{{ route("checkout.overview", $detail->id) }}">Bayar Sekarang</a></p>
+                    </div>
+
+                    @elseif ($detail->status == 1)
+                    <div class="alert alert-warning text-center">
+                        <p>Pembayaran kamu sedang diverifikasi, kami akan mengirimkan pesanan kamu setelah pembayaran berhasil terverifikasi</p>
                     </div>
                     @endif
                     <div class="card mb-3 shadow border-0">
@@ -115,7 +120,7 @@
                                         @if ($detail->status == 0)
                                             <span class="badge badge-warning">Menunggu Pembayaran</span>
                                         @elseif($detail->status == 1)
-                                            <span class="badge badge-danger">Dibatalkan</span>
+                                            <span class="badge badge-warning">Sedang diverifikasi</span>
                                         @elseif ($detail->status == 2)
                                             <span class="badge badge-info">Sudah Dibayar</span>
                                         @else

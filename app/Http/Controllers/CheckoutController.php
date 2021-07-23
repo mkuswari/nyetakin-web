@@ -124,7 +124,13 @@ class CheckoutController extends Controller
             "name" => $request->name,
             "total_amount" => $request->total_amount,
             "payment_slip" => $imgName,
+
         ]);
+
+        $order = Order::find($request->order_id);
+        $order->update(
+            ["status" => "1"]
+        );
 
         return redirect()->route('checkout.success');
 
