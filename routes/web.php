@@ -12,6 +12,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
@@ -106,4 +107,5 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('/products', ProductController::class);
     Route::resource('/orders', OrderController::class)->except('create', 'store');
     Route::resource('/reviews', ReviewController::class)->except('create', 'store', 'edit', 'update', 'show');
+    Rotue::resource('/shippings', ShippingController::class)->except('create', 'store', 'edit', 'update', 'show');
 });

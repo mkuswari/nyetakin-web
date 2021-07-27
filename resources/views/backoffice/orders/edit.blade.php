@@ -35,12 +35,11 @@
                                         <select name="status" id="status" class="form-control">
                                             <option value="0" {{ $order->status == '0' ? 'selected' : '' }}>Menunggu
                                                 Pembayaran</option>
-                                            <option value="1" {{ $order->status == '1' ? 'selected' : '' }}>Perlu Verifikasi
+                                            <option value="1" {{ $order->status == '1' ? 'selected' : '' }}>Sudah Dibayar
                                             </option>
-                                            <option value="2" {{ $order->status == '2' ? 'selected' : '' }}>Sudah Dibayar
+                                            <option value="2" {{ $order->status == '2' ? 'selected' : '' }}>Pesanan Dikirimkan
                                             </option>
-                                            <option value="3" {{ $order->status == '3' ? 'selected' : '' }}>Pesanan
-                                                Dikirimkan
+                                            <option value="3" {{ $order->status == '3' ? 'selected' : '' }}>Pembayaran Ditolak
                                             </option>
                                         </select>
                                     </div>

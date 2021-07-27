@@ -75,11 +75,11 @@
                         @if ($detail->status == 0)
                             <span class="badge badge-warning">Menunggu Pembayaran</span>
                         @elseif($detail->status == 1)
-                            <span class="badge badge-danger">Dibatalkan</span>
-                        @elseif ($detail->status == 2)
                             <span class="badge badge-info">Sudah Dibayar</span>
+                        @elseif ($detail->status == 2)
+                            <span class="badge badge-success">Sudah Dikirimkan</span>
                         @else
-                            <span class="badge badge-success">Dikirimkan</span>
+                            <span class="badge badge-danger">Pembayaran Ditolak</span>
                         @endif
                     </td>
                 </tr>

@@ -60,11 +60,11 @@
                                             @if ($order->status == 0)
                                                 <span class="badge badge-warning">Menunggu Pembayaran</span>
                                             @elseif($order->status == 1)
-                                                <span class="badge badge-warning">Sedang diverfikasi</span>
-                                            @elseif ($order->status == 2)
                                                 <span class="badge badge-info">Sudah Dibayar</span>
+                                            @elseif ($order->status == 2)
+                                                <span class="badge badge-success">Pesanan Dikirimkan</span>
                                             @else
-                                                <span class="badge badge-success">Dikirimkan</span>
+                                                <span class="badge badge-danger">Pembayaran Ditolak</span>
                                             @endif
                                         </td>
                                         <td>

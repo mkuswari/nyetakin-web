@@ -278,6 +278,7 @@
                             $('#ongkir').removeClass('d-none');
                             $.each(response[0]['costs'], function(key, value) {
                                 $('select[name="services"]').append(
+                                    '<option value="0" disabled selected>--Pilih Jasa Pengiriman--</option>',
                                     '<option value="' + value.cost[0]
                                     .value + '">' + response[0].code
                                     .toUpperCase() +
