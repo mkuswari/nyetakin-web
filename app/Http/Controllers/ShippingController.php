@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shipping;
 use Illuminate\Http\Request;
 
 class ShippingController extends Controller
@@ -13,7 +14,9 @@ class ShippingController extends Controller
      */
     public function index()
     {
-        //
+        $shippings = Shipping::all();
+
+        return view('backoffice.shippings.index', compact('shippings'));
     }
 
     /**

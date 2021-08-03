@@ -16,8 +16,11 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Beragam Kebutuhan</h1>
-                                            <p>Temukan beragam kebutuhan percetakan dan cetak custom kamu hanya di nyetakin
+                                            <h2>Memberikan Solusi Desain & Cetak pada Media Secara Online</h2>
+                                            <p>Di era new normal ini, nikmati kemudahan dalam membuat desain ataupun
+                                                mencetak pada media secara online. Lebih aman, nyaman dan cepat.
+                                                Nyetakin.com menyediakan berbagai layanan dan produk dengan harga yang
+                                                terjangkau
                                             </p>
                                         </div>
                                     </div>
@@ -32,7 +35,7 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Jasa Design Custom</h1>
+                                            <h2>Jasa Design Custom</h2>
                                             <p>Ingin mencetak sesuatu sesuai dengan selera kamu? kami juga menyediakan jasa
                                                 cetak custom loh.</p>
                                         </div>
@@ -48,8 +51,10 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Mudah dan Murah</h1>
-                                            <p>Rasakan kemudahan dan tarif mudah yang kami berikan, kepuasan anda adalah
+                                            <h2>Mudah dan Murah</h2>
+                                            <p>Rasakan kemudahan dan tarif murah serta kemudahan pembayaran yang kami
+                                                berikan,
+                                                kepuasan anda adalah
                                                 prestasi bagi kami.</p>
                                         </div>
                                     </div>

@@ -51,16 +51,17 @@
                                     class="hide-menu"> Kelola Pesanan
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"><a href="form-checkbox-radio.html" class="sidebar-link"><span
-                                    class="hide-menu"> Kelola Pengiriman
+                        <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="hide-menu"> Kelola
+                                    Pembayaran
                                 </span></a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="credit-card"
-                            class="feather-icon"></i><span class="hide-menu">Kelola
-                            Pembayaran</span>
+                    <a class="sidebar-link sidebar-link" href="{{ route('shippings.index') }}"
+                        aria-expanded="false"><i data-feather="truck" class="feather-icon"></i><span
+                            class="hide-menu">Kelola
+                            Pengiriman</span>
                     </a>
                 </li>
                 <li class="list-divider"></li>

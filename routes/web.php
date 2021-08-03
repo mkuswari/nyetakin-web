@@ -107,5 +107,5 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('/products', ProductController::class);
     Route::resource('/orders', OrderController::class)->except('create', 'store');
     Route::resource('/reviews', ReviewController::class)->except('create', 'store', 'edit', 'update', 'show');
-    Rotue::resource('/shippings', ShippingController::class)->except('create', 'store', 'edit', 'update', 'show');
+    Route::resource('/shippings', ShippingController::class)->except('create', 'store');
 });
