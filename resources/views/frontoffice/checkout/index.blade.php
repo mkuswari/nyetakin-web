@@ -49,8 +49,7 @@
                             <div class="col-md-12 form-group">
                                 <label for="email">E-mail Penerima</label>
                                 <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
-                                    name="email" placeholder="E-mail"
-                                    value="{{ Auth::user()->email }}" />
+                                    name="email" placeholder="E-mail" value="{{ Auth::user()->email }}" />
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         {{ $message }}
@@ -278,7 +277,6 @@
                             $('#ongkir').removeClass('d-none');
                             $.each(response[0]['costs'], function(key, value) {
                                 $('select[name="services"]').append(
-                                    '<option value="0" disabled selected>--Pilih Jasa Pengiriman--</option>',
                                     '<option value="' + value.cost[0]
                                     .value + '">' + response[0].code
                                     .toUpperCase() +
@@ -305,6 +303,5 @@
             });
 
         })
-
     </script>
 @endpush

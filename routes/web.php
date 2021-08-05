@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -108,4 +109,5 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('/orders', OrderController::class)->except('create', 'store');
     Route::resource('/reviews', ReviewController::class)->except('create', 'store', 'edit', 'update', 'show');
     Route::resource('/shippings', ShippingController::class)->except('create', 'store');
+    Route::resource('/payments', PaymentController::class)->except('create', 'store');
 });

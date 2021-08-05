@@ -15,5 +15,7 @@ class PaymentController extends Controller
     public function index()
     {
         $payments = Payment::all();
+
+        return view('backoffice.payments.index', compact('payments'));
     }
 }

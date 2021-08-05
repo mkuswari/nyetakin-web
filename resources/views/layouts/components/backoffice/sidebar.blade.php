@@ -51,7 +51,8 @@
                                     class="hide-menu"> Kelola Pesanan
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="hide-menu"> Kelola
+                        <li class="sidebar-item"><a href="{{ route('payments.index') }}" class="sidebar-link"><span
+                                    class="hide-menu"> Kelola
                                     Pembayaran
                                 </span></a>
                         </li>

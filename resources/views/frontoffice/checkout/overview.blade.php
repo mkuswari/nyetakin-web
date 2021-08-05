@@ -105,7 +105,8 @@
                 <div class="col-lg-12">
                     <div class="payment_section">
                         <div class="text-center">
-                            <span class="text-success">Pesanan Kamu telah Kami terima. Silahkan lakukan pembayaran untuk melanjutkan.</span>
+                            <span class="text-success">Pesanan Kamu telah Kami terima. Silahkan lakukan pembayaran untuk
+                                melanjutkan.</span>
                         </div>
                         <div class="row my-4">
                             <div class="col-sm-6">
@@ -116,7 +117,7 @@
                                         </div>
                                         <div class="row d-flex justify-content-between">
                                             <div class="col-sm-4">
-                                                <img src="{{ asset("img/logo_btpn.svg") }}" width="100%">
+                                                <img src="{{ asset('img/logo_btpn.svg') }}" width="100%">
                                             </div>
                                             <div class="col-sm-8 align-self-center">
                                                 <h5>Dhiya Rifdah Afifah</h5>
@@ -132,7 +133,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 mx-auto">
-                                                <img src="{{ asset("img/nyetakin_qrcode.jpeg") }}" alt="">
+                                                <img src="{{ asset('img/nyetakin_qrcode.jpeg') }}" alt="">
                                                 <h5 class="text-center">nyetakin.com</h5>
                                             </div>
                                         </div>
@@ -146,16 +147,16 @@
                                         </div>
                                         <div class="row d-flex justify-content-between">
                                             <div class="col-sm-3 align-self-center">
-                                                <img src="{{ asset("img/logo_gopay.png") }}" width="100%">
+                                                <img src="{{ asset('img/logo_gopay.png') }}" width="100%">
                                             </div>
                                             <div class="col-sm-3 align-self-center">
-                                                <img src="{{ asset("img/logo_ovo.png") }}" width="100%">
+                                                <img src="{{ asset('img/logo_ovo.png') }}" width="100%">
                                             </div>
                                             <div class="col-sm-3 align-self-center">
-                                                <img src="{{ asset("img/logo_linkaja.png") }}" width="100%">
+                                                <img src="{{ asset('img/logo_linkaja.png') }}" width="100%">
                                             </div>
                                             <div class="col-sm-3 align-self-center">
-                                                <img src="{{ asset("img/logo_dana.png") }}" width="100%">
+                                                <img src="{{ asset('img/logo_dana.png') }}" width="100%">
                                             </div>
                                         </div>
                                     </div>
@@ -165,22 +166,26 @@
                                 <div class="payment_continue mt-3">
                                     <h4>Konfirmasi Pembayaran</h4>
                                     <hr>
-                                    <form action="{{ route("checkout.payment") }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('checkout.payment') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <input type="hidden" name="order_id" value="{{ $detail->id }}">
                                         <div class="form-group">
                                             <label for="name">Nama</label>
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama Kamu">
+                                            <input type="text" class="form-control" id="name" name="name"
+                                                placeholder="Nama Kamu">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group d-none">
                                             <label for="total_amount">Nominal Pembayaran</label>
-                                            <input type="number" class="form-control" id="total_amount" name="total_amount" placeholder="Jumlah yang dibayar">
+                                            <input type="number" class="form-control" id="total_amount" name="total_amount"
+                                                placeholder="Jumlah yang dibayar" value="{{ $detail->total_billing }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="payment_slip">Bukti Pembayaran</label>
                                             <input type="file" class="form-control" id="payment_slip" name="payment_slip">
                                         </div>
-                                        <p class="small text-muted">Note : Harap melampirkan bukti pembayaran. jika tidak, pesanan tidak akan kami proses.</p>
+                                        <p class="small text-muted">Note : Harap melampirkan bukti pembayaran. jika tidak,
+                                            pesanan tidak akan kami proses.</p>
                                         <button type="submit" class="btn_3 mt-3">Konfirmasi Pembayaran</button>
                                     </form>
                                 </div>

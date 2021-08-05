@@ -13,8 +13,8 @@ class Payment extends Model
         "order_id", "name", "total_amount", "payment_slip",
     ];
 
-    public function orders()
+    public function order()
     {
-        return $this->belongsTo('App\Models\Orders');
+        return $this->belongsTo('App\Models\Order');
     }
 }
