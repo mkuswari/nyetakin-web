@@ -9,8 +9,8 @@
         rel="stylesheet">
     <style>
         .payment-slip-image {
-            width: 200px;
-            height: 250px;
+            width: 150px;
+            height: 200px;
             object-fit: cover;
             object-position: center;
             border-radius: 10px;
@@ -42,7 +42,6 @@
                                     <th>Nama Pengirim</th>
                                     <th>Jumlah Pembayaran</th>
                                     <th>Bukti Pembayaran</th>
-                                    <th width="50">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,21 +57,6 @@
                                         <td>
                                             <img src="{{ asset('uploads/payments/' . $payment->payment_slip) }}"
                                                 class="payment-slip-image">
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('payments.show', [$payment->id]) }}"
-                                                class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-                                            <a href="{{ route('payments.edit', [$payment->id]) }}"
-                                                class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                            {{-- delete action --}}
-                                            <form action="{{ route('payments.destroy', [$payment->id]) }}" method="POST"
-                                                class="d-inline"
-                                                onsubmit="return confirm('Hapus Pembayaran {{ $payment->invoice_number }} dari sistem secara permanent?')">
-                                                @csrf
-                                                @method("DELETE")
-                                                <button type="submit" class="btn btn-danger btn-sm"><i
-                                                        class="fa fa-trash"></i></button>
-                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

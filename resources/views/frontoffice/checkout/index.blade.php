@@ -135,6 +135,7 @@
                                 <label for="services">Jenis Layanan</label>
                                 <select class="form-control @error('services')is-invalid @enderror" name="services"
                                     id="services">
+                                    <option value="0" disabled selected>--Pilih Jenis Layanan--</option>
                                     {{--  --}}
                                 </select>
                                 @error('services')

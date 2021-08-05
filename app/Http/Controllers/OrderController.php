@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Payment;
 use App\Models\Province;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,11 @@ class OrderController extends Controller
         $province = $getProvince->name;
         $items = OrderDetail::with('product')->where("order_id", $id)->get();
 
-        return view('backoffice.orders.show', compact('detail', "city", "province", "items"));
+        // get payment information
+        $payment = Payment::where("order_id", $id)->first();
+
+
+        return view('backoffice.orders.show', compact('detail', "city", "province", "items", "payment"));
     }
 
     /**
