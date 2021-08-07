@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
+use App\Models\Order;
+use App\Models\Province;
 use App\Models\Shipping;
 use Illuminate\Http\Request;
 
@@ -26,7 +29,7 @@ class ShippingController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.shippings.create');
     }
 
     /**
@@ -37,7 +40,19 @@ class ShippingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "receipt_number" => "required"
+        ]);
+
+        Shipping::create([
+            "order_id" => $request->order_id,
+            "receipt_number" => $request->receipt_number,
+        ]);
+
+        session()->flash('success', 'Pesanan Berhasil Dikirimkan');
+
+
+        return redirect()->route("shippings.index");
     }
 
     /**
@@ -48,30 +63,14 @@ class ShippingController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $shipping = Shipping::find($id);
+        $order = Order::where("id", $shipping->order_id)->first();
+        $getCity = City::where("city_id", $order->city_destination)->first();
+        $city = $getCity->name;
+        $getProvince = Province::where("province_id", $order->province_destination)->first();
+        $province = $getProvince->name;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return view('backoffice.shippings.show', compact('shipping', 'order', 'city', 'province'));
     }
 
     /**
@@ -82,6 +81,12 @@ class ShippingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shipping = Shipping::find($id);
+
+        $shipping->delete();
+
+        session()->flash('success', 'Data Pengiriman berhasil dihapus');
+
+        return redirect()->route("shippings.index");
     }
 }

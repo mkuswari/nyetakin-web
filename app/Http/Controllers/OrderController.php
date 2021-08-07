@@ -79,7 +79,12 @@ class OrderController extends Controller
             "status" => $request->status
         ]);
 
+        if ($request->status == 2) {
+            return redirect()->route("shipping.create", ['id' => $id]);
+        }
+
         session()->flash('success', 'Status Pesanan berhasil diupdates');
+
 
         return redirect()->route("orders.index");
     }

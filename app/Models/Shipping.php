@@ -9,8 +9,13 @@ class Shipping extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'order_id',
+        'receipt_number'
+    ];
+
     public function Order()
     {
-        return $this->belongsTo('App\Model\Order');
+        return $this->belongsTo('App\Models\Order');
     }
 }

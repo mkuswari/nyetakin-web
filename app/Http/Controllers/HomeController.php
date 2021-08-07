@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Province;
+use App\Models\Shipping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,6 +48,8 @@ class HomeController extends Controller
         $getProvince = Province::where("province_id", $detail->province_destination)->first();
         $province = $getProvince->name;
 
-        return view('frontoffice.orders.detail', compact('detail', "items", "city", "province"));
+        $shipping = Shipping::where("order_id", $id)->first();
+
+        return view('frontoffice.orders.detail', compact('detail', "items", "city", "province", "shipping"));
     }
 }

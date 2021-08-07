@@ -128,6 +128,13 @@
                                         @endif
                                     </td>
                                 </tr>
+                                @if ($detail->status == 2)
+                                    <tr>
+                                        <td>Nomor Resi</td>
+                                        <td>:</td>
+                                        <td>{{ \Str::upper($shipping->receipt_number) }}</td>
+                                    </tr>
+                                @endif
                             </table>
                         </div>
                     </div>

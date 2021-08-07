@@ -176,7 +176,7 @@
                                     <img src="{{ asset('uploads/payments/' . $payment->payment_slip) }}"
                                         class="payment-slip-image d-block">
                                     <a href="{{ asset('uploads/payments/' . $payment->payment_slip) }}"
-                                        download="{{ asset('uploads/payments/' . $payment->payment_slip) }}"
+                                        download
                                         class="btn btn-warning btn-sm text-white mt-2" style="border-radius: 5px;">Unduh
                                         Bukti
                                         Pembayaran</a>
