@@ -68,6 +68,11 @@ class PageController extends Controller
         return view('pages.portfolio', compact("portfolios"));
     }
 
+    public function cetakPasFoto()
+    {
+        return view("pages.pasfoto");
+    }
+
     public function portfolioDetail($slug)
     {
         $portfolio = Portfolio::where("slug", $slug)->first();
