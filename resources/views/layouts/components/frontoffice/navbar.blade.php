@@ -18,6 +18,9 @@
                 <a class="nav-link" href="{{ url('/product') }}">Produk</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ url('/cetak-pasfoto') }}">Cetak Pas Foto</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ url('/portfolio') }}">Portfolio</a>
             </li>
             <li class="nav-item">

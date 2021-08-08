@@ -41,6 +41,8 @@ Route::get('/category/{slug}', [PageController::class, 'categoryDetail']);
 // products
 Route::get('/product', [PageController::class, 'product']);
 Route::get('/product/{slug}', [PageController::class, 'productDetail']);
+// cetak pas foto route
+Route::get('/cetak-pasfoto', [PageController::class, 'cetakPasFoto']);
 // portfolios
 Route::get('/portfolio', [PageController::class, 'portfolio']);
 Route::get('/portfolio/{slug}', [PageController::class, 'portfolioDetail']);
