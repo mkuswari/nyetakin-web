@@ -6,15 +6,15 @@
 
 @push('styles')
     <style>
-        .about-image{
+        .about-image {
             border-radius: 50px;
         }
 
-        .category-link{
+        .category-link {
             text-align: center;
         }
 
-        .category-thumbnail{
+        .category-thumbnail {
             height: 180px;
             object-fit: cover;
             object-position: center;
@@ -22,9 +22,10 @@
             margin-bottom: 8px;
         }
 
-        .category-thumbnail:hover{
+        .category-thumbnail:hover {
             opacity: 0.5;
         }
+
     </style>
 @endpush
 
@@ -100,15 +101,16 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
-                    <img src="{{ asset("img/home-slide.gif") }}" class="about-image shadow-sm">
+                    <img src="{{ asset('img/home-slide.gif') }}" class="about-image shadow-sm">
                 </div>
                 <div class="col-lg-7 px-5 mt-3">
                     <div class="section_title">
                         <p class="text-danger">Tentang Kami</p>
                         <h2 class="py-3">Nyetakin - Platform <br>
                             "All in One Services" <br>
-                           Design dan Cetak</h2>
-                        <p class="py-3">Kini anda tidak perlu lagi kesulitan sehingga akan memudahkan anda dalam proses design dan cetak mencetak.</p>
+                            Design dan Cetak</h2>
+                        <p class="py-3">Kini anda tidak perlu lagi kesulitan sehingga akan memudahkan anda dalam proses
+                            design dan cetak mencetak.</p>
                     </div>
                     <div class="row py-3">
                         <div class="col-sm-6">
@@ -119,7 +121,8 @@
                         <div class="col-sm-6">
                             <h3 class="font-weight-bold text-success">23+</h3>
                             <h4>Mitra Designer & Cetak</h4>
-                            <p>Kami bekerjasama dengan banyak designer dan percetakan berbagai media print yang siap melayani kebutuhan anda.</p>
+                            <p>Kami bekerjasama dengan banyak designer dan percetakan berbagai media print yang siap
+                                melayani kebutuhan anda.</p>
                         </div>
                     </div>
                 </div>
@@ -183,13 +186,13 @@
                         @forelse ($products as $product)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_product_item text-center">
-                                    <img src="{{ asset('uploads/products/' . $product->thumbnail) }}" alt="">
-                                    <div class="single_product_text">
-                                        <a href="{{ url('product/' . $product->slug) }}">
+                                    <a href="{{ url('product/' . $product->slug) }}">
+                                        <img src="{{ asset('uploads/products/' . $product->thumbnail) }}" alt="">
+                                        <div class="single_product_text">
                                             <h4>{{ $product->name }}</h4>
-                                        </a>
-                                        <h3>IDR. {{ number_format($product->selling_price) }}</h3>
-                                    </div>
+                                            <h3>IDR. {{ number_format($product->selling_price) }}</h3>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         @empty
