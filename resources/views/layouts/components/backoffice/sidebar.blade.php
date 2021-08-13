@@ -68,8 +68,8 @@
                 <li class="list-divider"></li>
                 <li class="nav-small-cap"><span class="hide-menu">Data Lainnya</span></li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="message-circle"
-                            class="feather-icon"></i><span class="hide-menu">Kelola
+                    <a class="sidebar-link sidebar-link" href="{{ route('reviews.index') }}" aria-expanded="false"><i
+                            data-feather="message-circle" class="feather-icon"></i><span class="hide-menu">Kelola
                             Review</span>
                     </a>
                 </li>

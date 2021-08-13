@@ -61,7 +61,8 @@
                             @enderror
                         </div>
                         <div class="col-md-12">
-                            <small class="text-muted">Password harus terdiri dari minimal 1 Huruf Kapital, dan 1 Angka</small>
+                            <small class="text-muted">Password minimal 8 karakter kombinasi minimal 1 huruf kapital
+                                angka</small>
                         </div>
                         <div class="col-md-12 form-group">
                             <button type="submit" value="submit" class="btn_3">

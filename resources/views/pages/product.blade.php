@@ -43,13 +43,13 @@
                         @forelse ($products as $product)
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single_product_item">
-                                    <img src="{{ asset('uploads/products/' . $product->thumbnail) }}" alt="">
-                                    <div class="single_product_text">
-                                        <a href="{{ url('product/' . $product->slug) }}">
+                                    <a href="{{ url('product/' . $product->slug) }}">
+                                        <img src="{{ asset('uploads/products/' . $product->thumbnail) }}" alt="">
+                                        <div class="single_product_text">
                                             <h4>{{ $product->name }}</h4>
-                                        </a>
-                                        <h3>Rp. {{ number_format($product->selling_price) }}</h3>
-                                    </div>
+                                            <h3>Rp. {{ number_format($product->selling_price) }}</h3>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         @empty
