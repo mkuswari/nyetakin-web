@@ -15,8 +15,8 @@ class CreateMajorsTable extends Migration
     {
         Schema::create('majors', function (Blueprint $table) {
             $table->id();
-            $table->integer('faculty_id');
-            $table->integer('major_id');
+            $table->string('faculty_id');
+            $table->string('major_id');
             $table->string('name');
             $table->timestamps();
         });
