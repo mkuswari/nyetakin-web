@@ -41,6 +41,13 @@
                             Portfolio</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{ route('portfolios.index') }}"
+                        aria-expanded="false"><i data-feather="camera" class="feather-icon"></i><span
+                            class="hide-menu">Kelola
+                            Cetak Foto</span>
+                    </a>
+                </li>
                 <li class="list-divider"></li>
                 <span class="nav-small-cap"><span class="hide-menu">Transaksi</span></span>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
@@ -78,6 +85,11 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="{{ route('profile') }}" aria-expanded="false"><i
                             data-feather="settings" class="feather-icon"></i><span class="hide-menu">Profile Saya</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link sidebar-link" href="{{ route('setting') }}" aria-expanded="false"><i
+                            data-feather="sliders" class="feather-icon"></i><span class="hide-menu">Pengaturan</span>
                     </a>
                 </li>
             </ul>

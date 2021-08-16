@@ -13,6 +13,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
@@ -113,4 +114,9 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('/shippings', ShippingController::class)->except('edit', 'update');
     Route::resource('/payments', PaymentController::class)->except('create', 'store', 'edit', 'update', 'show', 'destroy');
     Route::get('/shipping/create/{id}', [ShippingController::class, 'create'])->name('shipping.create');
+
+    // Route untuk pengaturan website
+    Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
+    Route::get('/setting/update/{id}', [SettingController::Class, 'updateSetting'])->name('setting.update');
+    Route::put('/setting/update/{id}', [SettingController::Class, 'storeUpdateSetting'])->name('setting.update');
 });
