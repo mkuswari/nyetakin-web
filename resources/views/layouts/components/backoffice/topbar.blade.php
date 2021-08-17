@@ -12,7 +12,7 @@
             <!-- ============================================================== -->
             <div class="navbar-brand">
                 <!-- Logo icon -->
-                <a href="index.html">
+                <a href="{{ route('dashboard') }}">
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
                         <img src="{{ asset('frontoffice/img/logo.png') }}" alt="homepage" class="dark-logo" />
