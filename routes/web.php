@@ -9,12 +9,14 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ShippingController;
+use App\Http\Controllers\TerminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +45,9 @@ Route::get('/category/{slug}', [PageController::class, 'categoryDetail']);
 Route::get('/product', [PageController::class, 'product']);
 Route::get('/product/{slug}', [PageController::class, 'productDetail']);
 // cetak pas foto route
+Route::get('/majors/{faculty_id}', [MainController::class, 'getMajors']);
 Route::get('/cetak-pasfoto', [PageController::class, 'cetakPasFoto']);
+Route::get('/cetak-pasfoto/upload', [MainController::class, 'uploadPasFoto']);
 // portfolios
 Route::get('/portfolio', [PageController::class, 'portfolio']);
 Route::get('/portfolio/{slug}', [PageController::class, 'portfolioDetail']);
@@ -107,12 +111,14 @@ Route::prefix('/dashboard')->group(function () {
         '/users' => UserController::class,
         '/categories' => CategoryController::class,
         '/portfolios' => PortfolioController::class,
+        '/termins' => TerminController::class,
     ], ['except' => ['show']]);
     Route::resource('/products', ProductController::class);
     Route::resource('/orders', OrderController::class)->except('create', 'store');
     Route::resource('/reviews', ReviewController::class)->except('create', 'store', 'edit', 'update', 'show');
     Route::resource('/shippings', ShippingController::class)->except('edit', 'update');
     Route::resource('/payments', PaymentController::class)->except('create', 'store', 'edit', 'update', 'show', 'destroy');
+    Route::resource('/photos', PhotoController::class);
     Route::get('/shipping/create/{id}', [ShippingController::class, 'create'])->name('shipping.create');
 
     // Route untuk pengaturan website

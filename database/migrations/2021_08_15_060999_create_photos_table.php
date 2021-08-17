@@ -18,9 +18,10 @@ class CreatePhotosTable extends Migration
             $table->bigInteger('termin_id')->nullable()->unsigned();
             $table->string('name');
             $table->string('nim');
-            $table->string('whatsapp');
             $table->string('faculty');
             $table->string('major');
+            $table->string('file');
+            $table->string('whatsapp');
             $table->timestamps();
 
             $table->foreign('termin_id')->references('id')->on('termins')->onDelete('CASCADE')->onUpdate('CASCADE');

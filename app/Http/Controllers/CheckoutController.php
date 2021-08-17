@@ -133,7 +133,6 @@ class CheckoutController extends Controller
         );
 
         return redirect()->route('checkout.success');
-
     }
 
     public function checkoutSuccess()

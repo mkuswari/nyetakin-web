@@ -73,6 +73,7 @@ class PageController extends Controller
         return view("pages.pasfoto");
     }
 
+
     public function portfolioDetail($slug)
     {
         $portfolio = Portfolio::where("slug", $slug)->first();

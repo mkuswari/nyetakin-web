@@ -16,8 +16,8 @@ class CreateTerminsTable extends Migration
         Schema::create('termins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->time('start');
-            $table->time('end');
+            $table->timestamp('start');
+            $table->timestamp('end')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });

@@ -41,12 +41,19 @@
                             Portfolio</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route('portfolios.index') }}"
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="camera" class="feather-icon"></i><span
-                            class="hide-menu">Kelola
-                            Cetak Foto</span>
-                    </a>
+                            class="hide-menu">Kelola Cetak Foto </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item"><a href="{{ route('termins.index') }}" class="sidebar-link"><span
+                                    class="hide-menu"> Data Termin
+                                </span></a>
+                        </li>
+                        <li class="sidebar-item"><a href="{{ route('payments.index') }}" class="sidebar-link"><span
+                                    class="hide-menu"> Pas Foto Mahasiswa
+                                </span></a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="list-divider"></li>
                 <span class="nav-small-cap"><span class="hide-menu">Transaksi</span></span>

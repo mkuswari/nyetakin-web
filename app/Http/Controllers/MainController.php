@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faculty;
+use App\Models\Major;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,8 +25,22 @@ class MainController extends Controller
         return redirect()->back();
     }
 
-    public function confirmPayment()
+    public function uploadPasFoto()
     {
+        $faculties = Faculty::pluck('name', 'faculty_id');
 
+        return view('frontoffice.photos.upload', compact('faculties'));
+    }
+
+    public function getMajors($id)
+    {
+        $majors = Major::where('faculty_id', $id)->pluck('name', 'major_id');
+
+        return json_encode($majors);
+    }
+
+    public function storePasFoto(Request $request)
+    {
+        //
     }
 }

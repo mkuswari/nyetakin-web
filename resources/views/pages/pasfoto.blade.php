@@ -21,7 +21,8 @@
         <div class="container">
             <div class="text-center">
                 <div class="panduan py-3">
-                    <p>Gaess, untuk kalian Mahasiswa <b>Telkom University</b> yang akan mencetak foto ijazah <br>
+                    <img src="{{ asset('img/telyu_logo.png') }}" width="150" class="mb-3">
+                    <p>Untuk kalian Mahasiswa <b>Telkom University</b> yang akan mencetak foto ijazah <br>
                         Silahkan mengikuti petunjuk dibawah ini, atau download panduan melalui link berikut.</p>
                     <a href="{{ asset('docs/prosedur_cetak_foto.pdf') }}" target="_blank"
                         class="btn btn-primary shadow mt-2" style="border-radius: 50px;">Unduh Panduan</a>
@@ -57,7 +58,7 @@
 
             <div class="row mt-5 justify-content-center">
                 <div class="col-sm-6 text-center">
-                    <a href="{{ url('/cetak-pasfoto/form') }}" class="btn btn-primary shadow btn-block"
+                    <a href="{{ url('/cetak-pasfoto/upload') }}" class="btn btn-primary shadow btn-block"
                         style="border-radius: 50px;">Saya mengerti, dan
                         lanjutkan</a>
                 </div>
