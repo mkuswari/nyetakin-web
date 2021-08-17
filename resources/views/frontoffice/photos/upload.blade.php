@@ -19,7 +19,7 @@
     </section>
     <div class="row mt-5">
         <div class="col-sm-5 mx-auto">
-            <form action="">
+            <form action="{{ route('pasfoto.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>

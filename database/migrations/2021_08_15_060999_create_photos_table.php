@@ -22,6 +22,8 @@ class CreatePhotosTable extends Migration
             $table->string('major');
             $table->string('file');
             $table->string('whatsapp');
+            $table->string('payment_slip')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
 
             $table->foreign('termin_id')->references('id')->on('termins')->onDelete('CASCADE')->onUpdate('CASCADE');

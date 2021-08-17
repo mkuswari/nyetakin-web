@@ -22,9 +22,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 mx-auto text-center">
-                    <img src="{{ asset("img/success-purchase.svg") }}" width="100%">
-                    <p class="text-success font-weight-bold my-2">Checkout Berhasil, kami akan mengirimkan pesanan kamu setelah memverifikasi pembayaran kamu</p>
-                    <a href="{{ route("home.order") }}" class="btn btn-primary shadow px-4" style="border-radius: 20px;">Pesanan Saya</a>
+                    <img src="{{ asset('img/success-purchase.svg') }}" width="100%">
+                    <p class="text-success font-weight-bold my-2">Checkout Berhasil, kami akan mengirimkan pesanan kamu
+                        setelah memverifikasi pembayaran kamu</p>
+                    <a href="{{ route('home.order') }}" class="btn btn-primary shadow px-4"
+                        style="border-radius: 20px;">Pesanan Saya</a>
                 </div>
             </div>
         </div>

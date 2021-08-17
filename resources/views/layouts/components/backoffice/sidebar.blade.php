@@ -49,7 +49,7 @@
                                     class="hide-menu"> Data Termin
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"><a href="{{ route('payments.index') }}" class="sidebar-link"><span
+                        <li class="sidebar-item"><a href="{{ route('photos.index') }}" class="sidebar-link"><span
                                     class="hide-menu"> Pas Foto Mahasiswa
                                 </span></a>
                         </li>
