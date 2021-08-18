@@ -15,6 +15,6 @@ class Termin extends Model
 
     public function photo()
     {
-        return $this->hasMany('App\Model\Photo');
+        return $this->hasMany('App\Models\Photo');
     }
 }

@@ -10,11 +10,11 @@ class Photo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'termin_id', 'name', 'nim', 'faculty', 'major', 'file', 'whatsapp'
+        'termin_id', 'name', 'nim', 'faculty', 'major', 'file', 'whatsapp', 'payment_slip', 'status'
     ];
 
     public function termin()
     {
-        return $this->belongsTo('App\Model\Termin');
+        return $this->belongsTo('App\Models\Termin');
     }
 }

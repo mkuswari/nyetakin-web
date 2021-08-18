@@ -49,7 +49,7 @@ Route::get('/majors/{faculty_id}', [MainController::class, 'getMajors']);
 Route::get('/cetak-pasfoto', [PageController::class, 'cetakPasFoto']);
 Route::get('/cetak-pasfoto/upload', [MainController::class, 'uploadPasFoto']);
 Route::post('/cetak-pasfoto', [MainController::class, 'storePasFoto'])->name('pasfoto.store');
-Route::get('/cetak-pasfoto/pembayaran/{id}', [MainController::class, 'pasFotoPayment'])->name('cetakpasfoto.pembayaran');
+Route::get('/cetak-pasfoto/pembayaran-berhasil/', [MainController::class, 'pasFotoPaymentSuccess'])->name('cetakpasfoto.success');
 // portfolios
 Route::get('/portfolio', [PageController::class, 'portfolio']);
 Route::get('/portfolio/{slug}', [PageController::class, 'portfolioDetail']);

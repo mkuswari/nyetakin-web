@@ -10,7 +10,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="tracking_box_inner">
-                        <h1 class="font-weight-bold">{{ $category->name }}</h1>
+                        <h2 class="font-weight-bold">{{ $category->name }}</h2>
                     </div>
                 </div>
             </div>

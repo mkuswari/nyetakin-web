@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function addReview(Request $request)
     {
 
@@ -49,14 +59,20 @@ class MainController extends Controller
             "faculty" => "required",
             "major" => "required",
             "file" => "required|image|max:2048",
-            "whatsapp" => "required"
+            "whatsapp" => "required",
+            "payment_slip" => "required|image|max:2048"
         ]);
 
         $terminData = Termin::latest()->first();
 
         if ($request->hasFile("file")) {
-            $imgName = $request->nim . '.' .  $request->file->extension();
+            $imgName = uniqid() . '.' .  $request->file->extension();
             $request->file->move(public_path('uploads/pasfoto/'), $imgName);
+        }
+
+        if ($request->hasFile("payment_slip")) {
+            $paymentImg = uniqid() . '.' . $request->payment_slip->extension();
+            $request->payment_slip->move(public_path('uploads/pasfoto_payments/'), $paymentImg);
         }
 
         $photo = Photo::create([
@@ -67,36 +83,15 @@ class MainController extends Controller
             "major" => $request->major,
             "file" => $imgName,
             "whatsapp" => $request->whatsapp,
+            "payment_slip" => $paymentImg
         ]);
 
 
         session()->flash('success', 'Pasfoto Kamu Berhasil di upload, silahkan lakukan pembayaran');
 
-        return redirect()->route('cetakpasfoto.pembayaran', $photo->id);
+        return redirect()->route('cetakpasfoto.success');
     }
 
-    public function pasFotoPayment($id)
-    {
-        $data = Photo::find($id);
-
-        return view('frontoffice.photos.payment', compact('data'));
-    }
-
-    public function updatePasFotoStatus(Request $request, $id)
-    {
-        $data = Photo::find($id);
-
-        if ($request->hasFile("payment_slip")) {
-            $imgName = $request->nim . '.' . $request->file->extension();
-            $request->file->move(public_path('uploads/pasfoto_payments/'), $imgName);
-        }
-
-
-        $data->update([
-            "payment_slip" => $imgName,
-            "status" => 1,
-        ]);
-    }
 
     public function pasFotoPaymentSuccess()
     {

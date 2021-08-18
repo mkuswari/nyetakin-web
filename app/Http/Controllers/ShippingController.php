@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class ShippingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role:admin,designer');
+    }
+
     /**
      * Display a listing of the resource.
      *

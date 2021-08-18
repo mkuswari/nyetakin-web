@@ -10,7 +10,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="tracking_box_inner">
-                        <h1 class="font-weight-bold">Katalog Produk</h1>
+                        <h2 class="font-weight-bold">Katalog Produk</h2>
                     </div>
                 </div>
             </div>
@@ -24,16 +24,17 @@
                 <div class="col-lg-12">
                     <div class="row d-flex justify-content-between">
                         <div class="col-lg-8 col-sm-6">
-                            <h3>Temukan Produk yang Kamu Inginkan</h3>
+                            <h4>Temukan Produk yang Kamu Inginkan</h4>
                         </div>
                         <div class="col-lg-4 col-sm-6">
                             <form action="{{ url('product') }}">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="keyword" id="keyword"
-                                        placeholder="Cari Nama Item">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary shadow" type="button" id="button-addon2"><i
-                                                class="fas fa-search"></i> Cari</button>
+                                        placeholder="Cari Nama Item" style="border-radius: 20px;">
+                                    <div class="input-group-append d-none">
+                                        <button class="btn_3 ml-2" type="button" id="button-addon2"><i
+                                                class="fas fa-search"></i>
+                                            Cari</button>
                                     </div>
                                 </div>
                             </form>

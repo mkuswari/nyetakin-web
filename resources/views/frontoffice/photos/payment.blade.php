@@ -60,7 +60,10 @@
                 </div>
                 <div class="card mt-3 shadow border-0" style="border-radius: 15px;">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('cetakpasfoto.updatestatus', [$data->id]) }}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method("PUT")
                             <div class="form-group">
                                 <label for="payment_slip"><b class="text-dark">Bukti Pembayaran</b></label>
                                 <input type="file" name="payment_slip" id="payment_slip" class="form-control">

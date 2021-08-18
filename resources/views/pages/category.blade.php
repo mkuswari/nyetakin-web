@@ -23,7 +23,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="tracking_box_inner">
-                        <h1 class="font-weight-bold">Katalog Kategori</h1>
+                        <h2 class="font-weight-bold">Katalog Kategori</h2>
+                        <p>Cari Apa yang kamu mau berdasarkan kategori</p>
                     </div>
                 </div>
             </div>
@@ -36,8 +37,7 @@
                 @forelse ($categories as $category)
                     <div class="col-sm-4">
                         <a href="{{ url('category/' . $category->slug) }}" class="text-center">
-                            <img src="{{ asset('uploads/categories/' . $category->image) }}"
-                                class="category-image shadow mb-3">
+                            <img src="{{ asset('uploads/categories/' . $category->image) }}" class="category-image mb-3">
                             <h4>{{ $category->name }}</h4>
                         </a>
                     </div>

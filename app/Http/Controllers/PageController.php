@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Portfolio;
 use App\Models\Product;
 use App\Models\Review;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -58,7 +59,9 @@ class PageController extends Controller
         $products = Product::all();
         $reviews = Review::all();
 
-        return view("pages.single.product", compact("product", "products", "reviews"));
+        $setting = Setting::latest()->first();
+
+        return view("pages.single.product", compact("product", "products", "reviews", "setting"));
     }
 
     public function portfolio()

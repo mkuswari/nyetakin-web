@@ -61,6 +61,12 @@
                                     onclick="event.preventDefault(); document.getElementById('form-addToWishlist').submit();">
                                     <i class="ti-heart"></i> </a>
                             </div>
+                            <div class="chat mt-3 text-center">
+                                <p>Ada Pertanyaan / Butuh Cetak Custom?</p>
+                                <a href="https://api.whatsapp.com/send?phone={{ $setting->office_whatsapp }}"
+                                    class="btn btn-success"><i class="fas fa-phone"></i> Hubungi
+                                    admin</a>
+                            </div>
                         </form>
                         {{-- add to wishlist form --}}
                         <form action="{{ route('wishlist.add') }}" method="post" id="form-addToWishlist">

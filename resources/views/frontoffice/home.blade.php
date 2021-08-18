@@ -43,6 +43,7 @@
                         <div class="card-body">
                             <h3>Dashboard</h3>
                             <hr>
+                            <h2>Selamat Datang, {{ Auth::user()->name }}</h2>
                         </div>
                     </div>
                 </div>
