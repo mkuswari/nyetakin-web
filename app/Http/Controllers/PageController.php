@@ -73,7 +73,9 @@ class PageController extends Controller
 
     public function cetakPasFoto()
     {
-        return view("pages.pasfoto");
+        $setting = Setting::first();
+
+        return view("pages.pasfoto", compact("setting"));
     }
 
 

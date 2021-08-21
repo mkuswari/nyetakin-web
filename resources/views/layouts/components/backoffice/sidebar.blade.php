@@ -55,12 +55,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="{{ route('incomes') }}" aria-expanded="false"><i
-                            data-feather="dollar-sign" class="feather-icon"></i><span class="hide-menu">Kelola
-                            Pendapatan</span>
-                    </a>
-                </li>
+                @if (Auth::user()->role == 'admin')
+                    <li class="sidebar-item">
+                        <a class="sidebar-link sidebar-link" href="{{ route('incomes') }}" aria-expanded="false"><i
+                                data-feather="dollar-sign" class="feather-icon"></i><span class="hide-menu">Kelola
+                                Pendapatan</span>
+                        </a>
+                    </li>
+                @endif
                 <li class="list-divider"></li>
                 <span class="nav-small-cap"><span class="hide-menu">Transaksi</span></span>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"

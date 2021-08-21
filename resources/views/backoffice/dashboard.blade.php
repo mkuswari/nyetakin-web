@@ -72,7 +72,13 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="font-weight-bold mb-3">Total Pendapatan hingga saat ini</h4>
-                    <h1 class="font-weight-bold text-dark">Rp. {{ number_format($laba_bersih) }} ,-</h1>
+                    @if (Auth::user()->role == 'admin')
+                        <h1 class="font-weight-bold text-dark">Rp. {{ number_format($laba_bersih) }} ,-</h1>
+                    @else
+                        <div class="text-center mt-3">
+                            <h3 class="text-light">Hanya Admin yang dapat melihat total pendapatan</h3>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

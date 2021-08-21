@@ -30,7 +30,8 @@
                 </div>
                 <div class="contact py-2">
                     <p>Jika ada pertanyaan silahkan hubungi kami melalui link dibawah</p>
-                    <a href="" class="btn btn-success" style="border-radius: 50px;" }><i class="fas fa-phone"></i> Hubungi
+                    <a href="https://api.whatsapp.com/send?phone={{ $setting->office_whatsapp }}" class="btn btn-success"
+                        style="border-radius: 50px;" }><i class="fas fa-phone"></i> Hubungi
                         via Whatsapp</a>
                 </div>
             </div>
