@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Income;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -27,6 +29,9 @@ class DashboardController extends Controller
 
         $orders = Order::latest()->paginate(10);
 
-        return view('backoffice.dashboard', compact('total_users', 'total_products', 'total_orders', 'total_reviews', 'orders'));
+        $laba_bersih = Income::sum("income");
+
+
+        return view('backoffice.dashboard', compact('total_users', 'total_products', 'total_orders', 'total_reviews', 'orders', 'laba_bersih'));
     }
 }

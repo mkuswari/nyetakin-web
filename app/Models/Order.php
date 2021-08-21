@@ -44,4 +44,9 @@ class Order extends Model
     {
         return $this->hasOne('App\Models\Shipping');
     }
+
+    public function income()
+    {
+        return $this->hasMany('App\Models\Income');
+    }
 }

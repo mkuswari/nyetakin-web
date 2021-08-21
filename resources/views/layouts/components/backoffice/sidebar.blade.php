@@ -56,8 +56,8 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="dollar-sign"
-                            class="feather-icon"></i><span class="hide-menu">Kelola
+                    <a class="sidebar-link sidebar-link" href="{{ route('incomes') }}" aria-expanded="false"><i
+                            data-feather="dollar-sign" class="feather-icon"></i><span class="hide-menu">Kelola
                             Pendapatan</span>
                     </a>
                 </li>

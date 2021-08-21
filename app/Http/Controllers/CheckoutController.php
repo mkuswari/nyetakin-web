@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\City;
 use App\Models\Courier;
+use App\Models\Income;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Payment;
@@ -126,6 +127,26 @@ class CheckoutController extends Controller
             "payment_slip" => $imgName,
 
         ]);
+
+        // ambil data harga awal dan harga jual untuk produk
+        $items = OrderDetail::with('product')->where("order_id", [$request->order_id])->get();
+
+        foreach ($items as $item) {
+            $pengeluaran = $item->product->initial_price * $item->quantity;
+        }
+        $pengeluaran_total = $pengeluaran + $pengeluaran;
+
+        $order = Order::find($request->order_id);
+
+        $pemasukan = $order->total_billing - $order->services;
+        $pemasukan_bersih = $pemasukan - $pengeluaran_total;
+
+
+        Income::create([
+            "order_id" => $request->order_id,
+            "income" => $pemasukan_bersih
+        ]);
+
 
         $order = Order::find($request->order_id);
         $order->update(

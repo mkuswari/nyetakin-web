@@ -71,14 +71,8 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="font-weight-bold mb-3">Pendapatan Bulan ini</h4>
-                    <h1 class="font-weight-bold">Rp. 1.327.341,-</h1>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="font-weight-bold mb-3">Total Semua Pendapatan</h4>
-                    <h1 class="font-weight-bold">Rp. 1.327.341,-</h1>
+                    <h4 class="font-weight-bold mb-3">Total Pendapatan hingga saat ini</h4>
+                    <h1 class="font-weight-bold text-dark">Rp. {{ number_format($laba_bersih) }} ,-</h1>
                 </div>
             </div>
         </div>
@@ -90,12 +84,12 @@
                         <thead>
                             <tr>
                                 <th>Tanggal</th>
-                                <td>Invoice</td>
-                                <td>Nama</td>
-                                <td>Nomor HP</td>
-                                <td>Total Tagihan</td>
-                                <td>Status</td>
-                                <td>Aksi</td>
+                                <th>Invoice</th>
+                                <th>Nama</th>
+                                <th>Nomor HP</th>
+                                <th>Total Tagihan</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

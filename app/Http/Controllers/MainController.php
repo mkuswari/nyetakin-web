@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faculty;
+use App\Models\Income;
 use App\Models\Major;
+use App\Models\Order;
 use App\Models\Photo;
 use App\Models\Review;
 use App\Models\Termin;

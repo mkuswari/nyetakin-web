@@ -18,6 +18,8 @@ class CreateIncomesTable extends Migration
             $table->bigInteger('order_id')->unsigned()->nullable();
             $table->integer('income');
             $table->timestamps();
+
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 

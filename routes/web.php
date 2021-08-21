@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
@@ -122,6 +123,7 @@ Route::prefix('/dashboard')->group(function () {
     Route::resource('/payments', PaymentController::class)->except('create', 'store', 'edit', 'update', 'show', 'destroy');
     Route::resource('/photos', PhotoController::class);
     Route::get('/shipping/create/{id}', [ShippingController::class, 'create'])->name('shipping.create');
+    Route::get('/incomes', [IncomeController::class, 'allIncome'])->name('incomes');
 
     // Route untuk pengaturan website
     Route::get('/setting', [SettingController::class, 'showSetting'])->name('setting');
