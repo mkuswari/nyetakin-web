@@ -25,6 +25,8 @@ class DashboardController extends Controller
         $total_orders = Order::all()->count();
         $total_reviews = Review::all()->count();
 
-        return view('backoffice.dashboard', compact('total_users', 'total_products', 'total_orders', 'total_reviews'));
+        $orders = Order::latest()->paginate(10);
+
+        return view('backoffice.dashboard', compact('total_users', 'total_products', 'total_orders', 'total_reviews', 'orders'));
     }
 }
